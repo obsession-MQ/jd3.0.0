@@ -1,0 +1,58 @@
+<view class="help">帮助</view>
+<view class="login_img">
+  <image mode="widthFix" src="../../icons/JD-login.png"></image>
+</view>
+
+
+<!-- 微信一键登录 -->
+<view class="wxlogin" wx:if="{{istrue}}">
+  <!-- <button class="login" bindtap="getUserProfile">微信一键登录</button> -->
+  <view class="login" bindtap="getUserProfile">微信一键登录</view>
+
+  <view class="login_ra">
+    <checkbox-group bindchange="getprotocol">
+      <label for="">
+        <checkbox checked="{{checked}}"></checkbox>若手机号未注册将进入注册流程，注册即为同意<text>《京东用户注册协议》</text><text>《京东隐私政策》</text>
+      </label>
+    </checkbox-group>
+  </view>
+</view>
+<!-- 手机登录 -->
+<view class="phone" wx:else>
+  <view class="mobie_phone">
+    <label for="">
+      <text class="area">+86</text>
+<!-- <text class="icon"></text> -->
+<text class="iconfont icon-xiala1"></text>
+    </label>
+    <input type="tel" placeholder="请输入手机号" class="acc_input" />
+  </view>
+  <view class="code">
+    <input class="a_input" placeholder="请输入收到的验证码" type="text" />
+    <view class="text_btn">获取验证码</view>
+  </view>
+  <view class="btn">
+    提交
+  </view>
+  <checkbox-group>
+    <label for="">
+      <checkbox></checkbox>若手机号未注册将进入注册流程，注册即为同意<text>《京东用户注册协议》</text><text>《京东隐私政策》</text>
+    </label>
+  </checkbox-group>
+</view>
+
+<view class="rest_login">
+  <view class="top">
+    <view class="wire"></view>
+    <view class="text">其他登录方式</view>
+    <view class="wire"></view>
+  </view>
+  <view class="one" bindtap="loginway" wx:if="{{istrue}}">
+    <view class="iconfont icon-tree-round-phone" style="font-size: 60rpx;color: #FF5500;"></view>
+    <view class="text">手机验证</view>
+  </view>
+  <view class="one" bindtap="loginway" wx:else>
+    <view class="iconfont icon-weixin" style="color: green; font-size: 60rpx;"></view>
+    <view class="text">微信登录</view>
+  </view>
+</view>

@@ -1,0 +1,85 @@
+<view class="container">
+  <view class="search_wrap" bindtap="handledownp">
+    <view class="downbtn" bindtap="handleBack">
+      <navigator >
+        <text class="iconfont icon-xiangzuo"></text>
+      </navigator>
+    </view>
+    <view class="searbar">
+      <navigator url="/pages/search/search">
+        <l-icon name="research" size="25" color="#3d3d3d" />
+        <text>{{title}}</text>
+      </navigator>
+    </view>
+  </view>
+  <view class="{{scrollTop>0?'tabs-class':''}}" bindscroll="onPageScroll">
+    <Tabs tabs="{{tabs}}" bindtabsItemChange="hanldeChange" bindtabsSortWay="checkedOn"
+      bindchangeStyleFlag="changeStyle">
+      <view class="tags df">
+        <scroll-view enable-flex scroll-x class="tags-box df aifs">
+          <block wx:for="{{CategoryList}}" wx:key="index">
+            <view class="tags-item {{index==0?'active':''}} {{ item.isChecked ?  'change-orange' :'' }}"
+              bind:tap="onChecked" data-id="{{index}}">{{item.con}}</view>
+          </block>
+        </scroll-view>
+        <view class="filter-container df pad" bind:tap="filter">
+          <text>筛选</text>
+          <text class="iconfont icon-shaixuan {{changeOrange?'changeOrange':''}}"></text>
+        </view>
+      </view>
+      <block wx:if="{{tabs[0].isActive}}">
+      </block>
+      <block wx:elif="{{tabs[1].isActive}}">
+      </block>
+      <block wx:else>
+      </block>
+    </Tabs>
+  </view>
+  <scroll-view scroll-y="{{isScroll}}" >
+  <scroll-view enable-flex scroll-x class="computer-list pad df">
+    <block wx:for="{{imgList}}" wx:key="index">
+      <view class="df col list-container">
+        <image src="{{item}}" class="img-container"></image>
+        <text class="type">买手力荐</text>
+      </view>
+    </block>
+  </scroll-view>
+  <view class="bigBox {{hiddenFlag?'hidden':''}}">
+    <navigator class=" {{changeStyleFlag ? '':'first_tab'}}" wx:for="{{goodsList}}" wx:key="goods_id"
+      url="/pages/goods_detail/goods_detail?good_id={{item.good_id}}">
+      <view class="goods_item {{changeStyleFlag?'df':''}}">
+        <view class="goods_img_wrap">
+          <image src="{{item.img}}"></image>
+        </view>
+        <view class="goods_info_wrap df col jcsb aifs">
+          <view class="goods_name">{{item.good_name}}</view>
+          <view class="df col aifs">
+            <l-price unit="￥" unit-size="27rpx" value="{{item.price}}" mode="text" color="orangered" size="35"
+              bold="600" autofix>666</l-price>
+            <text class="self-support">自营</text>
+            <view class="comment-container">
+              <text>20</text>
+              <text>条评价 </text>
+              <text> 20</text>
+              <text>条好评</text>
+            </view>
+            <view class="shop df">
+              <text class="shop-name">店铺</text>
+              <view class=" toShop df">
+                <text>进店</text>
+                <text>></text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </navigator>
+  </view>
+  </scroll-view>
+  <l-popup show="{{filterFlag}}" content-align="right" locked="{{false}}" l-bg-class="filter-class" l-class="filter-class">
+  <!-- <scroll-view scroll-y="{{true}}"> -->
+    <FilterBar FilterList="{{CategoryList}}" bindtagsChoose="hanldeChoose" address="{{address}}"
+      bind:filterFlag="onHidePupopTap" />
+  <!-- </scroll-view> -->
+  </l-popup>
+</view>

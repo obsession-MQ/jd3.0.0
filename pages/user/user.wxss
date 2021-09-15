@@ -1,0 +1,337 @@
+.user_page{
+
+}
+.user_head{
+    background-color: #FD333B;
+    /* min-height: 360rpx; */
+}
+.user_info{
+    display: flex;
+    padding: 20rpx 30rpx;
+}
+.info_head{
+    flex: 9;
+    display: flex;
+}
+.user_head_pic{
+    position: relative;
+    /* background-color: antiquewhite; */
+    display: flex;
+    justify-content: center;
+    width: 25%;
+    padding: 0;
+}
+
+.user_head_pic image{
+    width: 65%;
+}
+.real_name{
+    position: absolute;
+    bottom: -10rpx;
+    font-size: 22rpx;
+    padding: 5rpx 15rpx;
+    background-color: rgba(29, 28, 28,0.4);
+    color: #ffffff;
+    border-radius: 19rpx;
+    transform: scale(0.8);
+}
+.user_nickname{
+    color: #ffffff;
+    font-size: 32rpx;
+    margin-left: 5rpx;
+}
+.jxz{
+    display: flex;
+    margin-top: 20rpx;
+}
+.jxz_view{
+    font-size: 20rpx;
+    padding: 5rpx 10rpx;
+    background-color: rgba(134, 134, 134, 0.4);
+    border-radius: 15rpx;
+    margin-right: 14rpx;
+    transform: scale(0.9);
+}
+.click_login{
+    width:170rpx;
+    line-height:45rpx;
+    font-size:22rpx;
+    background-color: rgba(134, 134, 134, 0.4);
+    border-radius: 30rpx;
+    text-align:center;
+    margin-top: 20rpx ;
+}
+.setting{
+    flex: 1;
+    color: #ffffff;
+    text-align: right;
+    padding-top:10rpx ;
+    font-size: 34rpx;
+}
+.shopping_info{
+    display: flex;
+    width: 90%;
+    margin: 10rpx auto;
+}
+.collet{
+    flex: 1;
+    text-align: center;
+    color: #ffffff;
+
+}
+.collect_num{
+    font-weight: bold;
+
+}
+.collect_text{
+    font-size: 22rpx;
+    margin-top: 10rpx;
+}
+.jd_plus{
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    line-height: 80rpx;
+    margin: 0 auto;
+    margin-top: 30rpx;
+    font-size: 24rpx;
+    background-image: linear-gradient(to right,#1C264A,#324176);
+    border-top-right-radius: 30rpx;
+    border-top-left-radius: 30rpx;
+}
+.plus_title{
+    color: #F7D653;
+    flex: 4;
+    text-indent: 20rpx;
+    font-size: 23rpx;
+}
+.free{
+    flex: 2;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+.free_text{
+    background-color: #F7D653;
+    /* width: 60%; */
+    line-height: 27rpx;
+    padding: 5rpx 20rpx;
+    margin: 0 auto;
+    font-size: 20rpx;
+    border-radius: 20rpx;
+    margin-right: 20rpx;
+}
+.free_more{
+    font-size: 14rpx;
+}
+.user_center{
+    background-color: #FD333B;
+}
+.user_content{
+    width: 100%;
+    min-height: 150rpx;
+    background-color: #F7F7F7;
+    border-top-left-radius: 30rpx;
+    border-top-right-radius: 30rpx;
+    overflow: hidden;
+}
+.content_form1{
+    background-color: #fff;
+    margin-bottom: 30rpx;
+    border-radius: 20rpx;
+}
+.order_form{
+    display: flex;
+    width: 92%;
+    margin: 0 auto;
+    min-height: 150rpx;
+    align-items: center;
+}
+.obligation{
+    flex: 1;
+    text-align: center;
+}
+.obli_icon{
+    font-size: 34rpx;
+    margin-bottom: 15rpx;
+    font-weight: bold;
+}
+.obli_text{
+    font-size: 20rpx;
+
+}
+.dfk{
+    font-size: 32rpx;
+}
+.recip{
+    font-size: 40rpx;
+    margin-bottom: 10rpx;
+}
+.all_order{
+    color: #E8485A;
+}
+.orders{
+    margin-top: 23rpx;
+    position: relative;
+}
+.after_sale{
+    border-right: 6rpx solid rgb(250, 246, 246);
+
+}
+.check_bill{
+    font-size: 17rpx;
+    color: #999999;
+    margin-top: 3rpx;
+}
+.user_tri1{
+    position: absolute;
+    top: 30rpx;
+    left: -7rpx;
+    font-size: 18rpx;
+    color:rgb(250, 246, 246) ;
+}
+.my_asset{
+    color:#E8485A ;
+}
+.assets{
+    margin-top: 5rpx;
+    position: relative;
+}
+
+.game_interact{
+    background-color: #fff;
+    min-height: 100rpx;
+    border-radius:20rpx;
+    margin-bottom: 30rpx;
+}
+.game_title{
+    line-height: 70rpx;
+    padding-left: 30rpx;
+    border-bottom: 1px solid #F7F7F7;
+    font-size: 26rpx;
+}
+.game_cont{
+    display: flex;
+    justify-content: space-around;
+    /* width: 90%; */
+    margin: 0 auto;
+    padding: 20rpx;
+}
+.fruit{
+    flex: 1;
+    text-align: center;
+}
+.fruit_img image{
+    width: 50%;
+}
+.fruit_text{
+    font-size: 22rpx;
+}
+.instru_cont{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 20rpx;
+}
+.serve{
+    width: 25%;
+    text-align: center;
+    margin-bottom: 20rpx;
+    /* background-color: antiquewhite; */
+}
+.cut_off_line{
+    display: flex;
+    position: relative;
+    margin-top: 50rpx;
+    text-align: center;
+}
+.line1{
+    position: absolute;
+    top: 10rpx;
+    left: 20rpx;
+    width: 280rpx;
+    height: 0;
+    border-bottom: 1rpx solid #CCCCCC;
+    margin-top: 10rpx;
+}
+.squrt{
+    position: absolute;
+    left: 290rpx;
+    top: 15rpx;
+    width: 8rpx;
+    height: 8rpx;
+    background-color: #CCCCCC;
+    transform: rotate(-45deg);
+}
+.sq2{
+    position: absolute;
+    right: 290rpx;
+    top: 15rpx;
+    width: 8rpx;
+    height: 8rpx;
+    background-color: #CCCCCC;
+    transform: rotate(-45deg);
+}
+.line2{
+    position: absolute;
+    top: 10rpx;
+    right: 20rpx;
+    width: 280rpx;
+    height: 0;
+    border-bottom: 1rpx solid #CCCCCC;
+    margin-top: 10rpx;
+}
+.cut_off_text{
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 10rpx;
+    color: #a8a5a5;
+    font-size: 24rpx;
+}
+.recomment_list{
+    columns: 2;
+    column-gap: 20rpx;
+    padding: 40rpx 20rpx;
+}
+.goods_list_items{
+    width: 100%;
+    break-inside: avoid;
+    margin-bottom: 20rpx;
+    border-radius: 30rpx;
+    overflow: hidden;
+    background-color: #fff;
+
+  }
+  .list_items_img{
+
+  }
+  .list_items_text{
+    padding: 0 20rpx;
+  }
+  .list_items_title{
+    color: #000;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+  .list_items_tags{
+
+  }
+  .list_items_price{
+    color: #FF4142;
+    font-size: 24rpx;
+    line-height: 70rpx;
+    font-weight: bold;
+  }
+  .list_items_price text{
+    color: #FF4142;
+    font-size: 34rpx;
+    line-height: 40rpx;
+    font-weight: bold;
+  }
+  .list_items_comment{
+    color: #999999;
+    font-size: 24rpx;
+    margin-bottom: 20rpx;
+  }

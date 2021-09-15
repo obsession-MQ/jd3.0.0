@@ -1,0 +1,84 @@
+<view class="edit_address">
+    <view class="{{alert>0?'alert':''}}">{{alertText}}</view>
+    <form action="">
+        <view class="edit_cont">
+            <view class="edit_items">
+                <view class="item_box">
+                    <view class="item_title">收货人</view>
+                    <view class="item_input">
+                        <input type="text"
+                            placeholder-class="input_placeholder"
+                            placeholder="姓名"
+                            model:value="{{name}}"
+                            bindinput="name"
+                        />
+                    </view>
+                </view>
+            </view>
+            <view class="edit_items">
+                <view class="item_box context">
+                    <view class="item_title">
+                        <view class="contact_title" >联系方式</view>
+                        <view class="phone_number">+86 <text class="xiala iconfont icon-xiala1"></text></view>
+                    </view>
+                    <view class="item_input">
+                        <input type="text" model:value="{{phoneNum}}" bindinput="name" placeholder-class="input_placeholder" placeholder="手机号码"/>
+                    </view>
+                </view>
+            </view>
+            <view class="edit_items">
+                <view class="item_box">
+                    <view class="region">
+                        <view class="item_title">所在地区</view>
+                        <view class="item_input">
+                            <picker class="" mode="region" bindchange="handlepicker" custom-item="全部">
+                                <input type="text" model:value="{{address}}" bindinput="phone" placeholder-class="input_placeholder" placeholder="省市区县、乡镇等"/>
+                            </picker>
+                        </view>
+                    </view>
+                    <view class="position" bindtap="handleGetAddr"><text class="position_icon iconfont icon-dingwei"></text> 定位</view>
+                </view>
+            </view>
+            <view class="edit_items">
+                <view class="item_box box_details">
+                    <view class="item_title">详细地址</view>
+                    <view class="item_input add_details">
+                        <textarea class="details" model:value="{{detaiAddr}}" bindinput="phone" placeholder="街道、楼牌号等" placeholder-class="textarea_placeholder"></textarea>
+                    </view>
+                </view>
+            </view>
+            <view class="edit_items">
+                <view class="item_box">
+                    <view class="item_title">地址标签</view>
+                    <view class="item_input addr_tag">
+                        <view class="home">公司</view>
+                        <view class="home">家</view>
+                        <view class="home">学校</view>
+                        <view class="home add_tags iconfont icon-jia"></view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </form>
+    <view class="intelligent">
+        <view class="intell">
+            <view class="intell_title">智能识别地址：</view>
+            <view class="intell_input">
+                <textarea class="identify_addr" placeholder="粘贴整段文字如：北京市大兴区科创十一街京东集团总部，张小三，12345678901" placeholder-class="textarea_placeholder" auto-height="{{flase}}"></textarea>
+            </view>
+        </view>
+        <view class="default_addr">
+            <view class="setting_defau">
+                <view class="setting_title">设置默认地址</view>
+                <view class="setting_sub_title">提醒：每次下单会默认推荐使用该地址</view>
+            </view>
+            <view class="setting_icon">
+                <switch class="swich" color="red" type="switch" bindchange="defaultAddr">
+                </switch>
+            </view>
+        </view>
+    </view>
+    <view class="save_use">
+        <view class="btn" bindtap="saveAddress">保存并使用该地址</view>
+    </view>
+</view>

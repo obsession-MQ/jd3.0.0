@@ -1,0 +1,383 @@
+/* pages/pay1/pay1.wxss */
+page {
+  background-color: #f7f7f7;
+}
+.pay-head {
+  background-color: rgb(255,255,255);
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 16px;
+  background: #fff url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAAAKBAMAAACOO0tGAAAABGdBT…DXLwKT58CuX2cDTIEjdgOcYfJJ2A3Qgsmz4/CBwWgQUiMIAXzCOFELLk/nAAAAAElFTkSuQmCC) -7px bottom repeat-x;
+    background-size: 64px 5px;
+}
+.pay-head .check-address {
+  padding-left: 10px;
+}
+.pay-head .check-address text:nth-child(1) {
+  font-size: 16px;
+  color: #626262;
+}
+.pay-head .check-address text:nth-child(2) {
+  font-size: 16px;
+  font-weight: 600;
+  padding-left: 18px;
+}
+.pay-head .check-address .check-botton {
+  padding-top: 6px;
+  color: #626262;
+}
+.pay-head .check-address-right {
+  line-height: 44px;
+  padding-right: 4px;
+}
+.pay-head .check-address-right image {
+  width: 14px;
+  height: 14px;
+}
+.pay-content {
+  background-color: #ffffff;
+  margin: 10px 0px;
+  padding: 0 10px;
+  border-bottom: 1px solid #e5e5e5;
+}
+.pay-content .content-good {
+  padding-top: 20px;
+}
+.pay-content .content-good .content-mid {
+  display: flex;
+}
+.pay-content .content-good .content-mid .mid-left image {
+  width: 75px;
+  height: 75px;
+}
+.pay-content .content-good .content-mid .mid-right {
+  padding-left: 20px;
+  min-width: 0;
+}
+.pay-content .content-good .content-mid .mid-right .details {
+  /*这个单词的意思是强制在一行显示 */
+  white-space: nowrap;
+  /* 溢出的部分隐藏 */
+  overflow: hidden;
+  /* 文字溢出的时候用省略号显示 */
+  text-overflow: ellipsis;
+}
+.pay-content .content-good .content-mid .mid-right .pay-mid {
+  display: flex;
+  justify-content: space-between;
+}
+.pay-content .content-good .content-mid .mid-right .pay-mid .pay-price {
+  color: red;
+  font-weight: 600;
+  padding-top: 10px;
+}
+.pay-content .content-good .content-mid .mid-right .pay-mid .pay-num {
+  line-height: 41px;
+  color: #8d8a8a;
+  font-size: 14px;
+}
+.pay-content .content-good .content-mid .mid-right .pay-day .pay-day-top image {
+  width: 14px;
+  height: 14px;
+  vertical-align: middle;
+}
+.pay-content .content-good .content-mid .mid-right .pay-day .pay-day-top text {
+  vertical-align: middle;
+  font-size: 13px;
+  color: #999999;
+  display: inline-block;
+  padding-left: 5px;
+}
+.pay-content .content-good .content-mid .mid-right .pay-day .pay-day-botton image:nth-child(1) {
+  width: 14px;
+  height: 14px;
+  vertical-align: middle;
+}
+.pay-content .content-good .content-mid .mid-right .pay-day .pay-day-botton text:nth-child(2) {
+  vertical-align: middle;
+  font-size: 13px;
+  color: #999999;
+  display: inline-block;
+  padding-left: 5px;
+}
+.pay-content .content-good .content-mid .mid-right .pay-day .pay-day-botton image:nth-child(3) {
+  width: 14px;
+  height: 14px;
+  vertical-align: middle;
+  margin-left: 6px;
+}
+.pay-content .content-good .content-mid .mid-right .pay-day .pay-day-botton text:nth-child(4) {
+  vertical-align: middle;
+  font-size: 13px;
+  color: #999999;
+  display: inline-block;
+  padding-left: 5px;
+}
+.pay-content .content-good .distribution {
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 20px;
+}
+.pay-content .content-good .distribution text {
+  font-size: 13px;
+  color: #3a3939;
+}
+.pay-content .content-good .distribution .distribution-right {
+  display: flex;
+}
+.pay-content .content-good .distribution .distribution-right .right-right {
+  text-align: right;
+}
+.pay-content .content-good .distribution .distribution-right .right-right .right-top {
+  font-size: 12px;
+}
+.pay-content .content-good .distribution .distribution-right .right-right .right-botton {
+  font-size: 11px;
+  color: #999999;
+  padding-top: 5px;
+}
+.pay-content .content-good .distribution .distribution-right .right-img {
+  padding-left: 10px;
+  line-height: 35px;
+}
+.pay-content .content-good .distribution .distribution-right .right-img image {
+  width: 10px;
+  height: 10px;
+}
+.good-info {
+  padding-top: 10px;
+  background-color: #ffffff;
+}
+.good-info .info-totprice {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  padding: 10px 10px;
+}
+.good-info .info-totprice text {
+  font-size: 12px;
+  font-weight: 500;
+  padding-right: 20px;
+}
+.good-info .info-freight {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  padding: 10px 10px;
+}
+.good-info .info-freight text {
+  font-size: 12px;
+  padding-right: 20px;
+  color: red;
+}
+.good-info .gift-show .info-gift {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  padding: 10px 10px;
+}
+.good-info .gift-show .info-gift text {
+  font-size: 12px;
+  padding-right: 10px;
+  color: #999999;
+}
+.good-info .gift-show .info-gift image {
+  width: 12px;
+  height: 12px;
+}
+.good-info .gift-show .gift-hid {
+  font-size: 12px;
+  text-align: center;
+  color: #666666;
+  padding: 10px 0;
+}
+.good-info .gift-show .gift-hid image {
+  width: 12px;
+  height: 12px;
+}
+.good-info .gift {
+  font-size: 12px;
+  color: #666666;
+  text-align: center;
+  padding: 10px 0;
+}
+.good-info .gift image {
+  width: 12px;
+  height: 18px;
+  padding-top: 6px;
+}
+.good-info .pay-all {
+  border-top: 1px solid #f0f0f0;
+  text-align: right;
+  font-size: 14px;
+  padding: 10px 0px;
+  padding-right: 30px;
+}
+.good-info .pay-all text {
+  color: red;
+  font-weight: bold;
+}
+.invoice {
+  margin-top: 10px;
+  font-size: 14px;
+  display: flex;
+  background-color: #ffffff;
+  padding: 10px 10px;
+  justify-content: space-between;
+}
+.invoice .invoice-left {
+  display: flex;
+}
+.invoice .invoice-left text {
+  font-size: 12px;
+  color: #999999;
+}
+.invoice .invoice-left image {
+  width: 12px;
+  height: 12px;
+  margin-top: 3px;
+  margin-left: 8px;
+}
+.pay-page {
+  margin-bottom: 50px;
+  margin-top: 10px;
+  background-color: #ffffff;
+}
+.pay-page .wx-pay {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.pay-page .wx-pay .wx-left {
+  display: flex;
+}
+.pay-page .wx-pay .wx-left .wx-img image {
+  width: 18px;
+  height: 18px;
+}
+.pay-page .wx-pay .wx-left text {
+  font-size: 13px;
+  padding-left: 10px;
+}
+.pay-page .wx-pay .wx-check checkbox .wx-checkbox-input {
+  border-radius: 50%;
+  /* 圆角 */
+  width: 34rpx;
+  /* 背景的宽 */
+  height: 34rpx;
+  /* 背景的高 */
+}
+.pay-page .wx-pay .wx-check checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+  border: 1px transparent solid;
+  background: red;
+}
+.pay-page .wx-pay .wx-check checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+  border-radius: 50%;
+  /* 圆角 */
+  width: 40rpx;
+  /* 选中后对勾大小，不要超过背景的尺寸 */
+  height: 40rpx;
+  /* 选中后对勾大小，不要超过背景的尺寸 */
+  line-height: 40rpx;
+  text-align: center;
+  font-size: 30rpx;
+  /* 对勾大小 30rpx */
+  color: #fff;
+  /* 对勾颜色 白色 */
+  background: transparent;
+  transform: translate(-50%, -50%) scale(1);
+  -webkit-transform: translate(-50%, -50%) scale(1);
+}
+.pay-page .fr-pay {
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
+}
+.pay-page .fr-pay .fr-left {
+  display: flex;
+}
+.pay-page .fr-pay .fr-left .pay-ti {
+  padding-left: 5px;
+}
+.pay-page .fr-pay .fr-left .pay-ti image {
+  width: 12px;
+  height: 12px;
+}
+.pay-page .fr-pay .fr-left .fr-img image {
+  width: 29px;
+  height: 20px;
+}
+.pay-page .fr-pay .fr-left text {
+  font-size: 13px;
+  padding-left: 4px;
+}
+.pay-page .fr-pay .fr-check {
+  padding-right: 5px;
+}
+.pay-page .fr-pay .fr-check text {
+  font-size: 12px;
+  color: #999999;
+  padding-right: 5px;
+}
+.pay-page .fr-pay .fr-check checkbox .wx-checkbox-input {
+  border-radius: 50%;
+  /* 圆角 */
+  width: 34rpx;
+  /* 背景的宽 */
+  height: 34rpx;
+  /* 背景的高 */
+}
+.pay-page .fr-pay .fr-check checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+  border: 1px transparent solid;
+  background: red;
+}
+.pay-page .fr-pay .fr-check checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+  border-radius: 50%;
+  /* 圆角 */
+  width: 40rpx;
+  /* 选中后对勾大小，不要超过背景的尺寸 */
+  height: 40rpx;
+  /* 选中后对勾大小，不要超过背景的尺寸 */
+  line-height: 40rpx;
+  text-align: center;
+  font-size: 30rpx;
+  /* 对勾大小 30rpx */
+  color: #fff;
+  /* 对勾颜色 白色 */
+  background: transparent;
+  transform: translate(-50%, -50%) scale(1);
+  -webkit-transform: translate(-50%, -50%) scale(1);
+}
+.pay-interface {
+  padding: 5px 10px;
+  box-shadow: #c0c0c0 0px 14px 6px 14px;
+  width: 100vw;
+  position: fixed;
+  z-index: 10000;
+  background-color: #ffffff;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+}
+.pay-interface .interface-left {
+  line-height: 40px;
+}
+.pay-interface .interface-left text:nth-child(1) {
+  font-size: 16px;
+}
+.pay-interface .interface-left text:nth-child(2) {
+  font-size: 15px;
+  color: red;
+}
+.pay-interface .interface-right {
+  width: 154px;
+  height: 40px;
+  background-color: #06ba04;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 20px;
+  color: white;
+}

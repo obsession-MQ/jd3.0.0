@@ -1,0 +1,83 @@
+<!--pages/setting/index.wxml-->
+<view class="setting_page">
+    <view class="setting_head">
+        <view class="setting_title">
+            <view class="title_left">管理我的账户</view>
+            <view class="title_right"><text class="baik iconfont icon-baike" ></text>账户小百科</view>
+        </view>
+        <view class="login_info" bindtap="handleUserInfo">
+            <view class="login_info_cont">
+                <view class="now_status"><view class="status_text">当前登录</view></view>
+                <view class="user_info">
+                    <view class="infos">
+                        <view class="user_head_img">
+                            <image class="" src="//img11.360buyimg.com/jdphoto/s120x120_jfs/t21160/90/706848746/2813/d1060df5/5b163ef9N4a3d7aa6.png" mode="widthFix"  />
+                        </view>
+                        <view class="name">
+                            <view class="user_nikename">
+                                <view class="nickname">{{nickName}}</view>
+                                <view class="account">正式京东账户</view>
+                            </view>
+                            <view class="user_username">用户名: jd_NWgJrWFyciNq</view>
+                        </view>
+                    </view>
+                    <view class="user_more iconfont icon-xiangyou1"></view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="setting_form">
+        <view class="my_address">
+            <view class="address" bindtap="handleMyaddress">
+                <view class="add_left">我的收货地址</view>
+                <view class="add_right">管理我的地址 <text class="mana icon-xiangyou1 iconfont"></text></view>
+            </view>
+            <view class="address">
+                <view class="add_left">发票抬头管理</view>
+                <view class="add_right">管理增票资质 <text class="mana icon-xiangyou1 iconfont"></text></view>
+            </view>
+        </view>
+        <view class="my_address">
+            <view class="address">
+                <view class="add_left">账户与安全</view>
+                <view class="add_right">密码/实名认证等管理 <text class="mana icon-xiangyou1 iconfont"></text></view>
+            </view>
+            <view class="address">
+                <view class="add_left">京东支付密码</view>
+                <view class="add_right">已设置 <text class="mana icon-xiangyou1 iconfont"></text></view>
+            </view>
+            <view class="address">
+                <view class="add_left">微信免密支付 <text class="iconfont icon-shuoming"> </text>
+                  </view>
+                <view class="add_right">去开通 <text class="mana icon-xiangyou1 iconfont"></text></view>
+            </view>
+        </view>
+        <view class="my_address">
+            <view class="address">
+                <view class="add_left">PLUS会员</view>
+                <view class="add_right">开通即领专享好礼<text class="mana icon-xiangyou1 iconfont"></text></view>
+            </view>
+            <view class="address">
+                <view class="add_left">山姆会员 </view>
+                <view class="add_right"><text class="mana icon-xiangyou1 iconfont"></text></view>
+            </view>
+        </view>
+        <view class="my_address">
+            <view class="address">
+                <view class="add_left">联系客服</view>
+                <view class="add_right">即使解答用户疑难 <text class="mana icon-xiangyou1 iconfont"></text></view>
+            </view>
+            <view class="address">
+                <view class="add_left">建议反馈</view>
+                <view class="add_right">期待您的建议 <text class="mana icon-xiangyou1 iconfont"></text></view>
+            </view>
+        </view>
+    </view>
+    <view class="cancel_login">
+        <view class="cancel_text" bindtap="logOff">退出登录</view>
+    </view>
+    <view class="jd_logo">
+        <image class="" src="/icon/jd_logo.png" mode="widthFix"  />
+    </view>
+
+</view>

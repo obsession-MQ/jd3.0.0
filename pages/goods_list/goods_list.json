@@ -1,0 +1,16 @@
+{
+  "usingComponents": {
+    "SearchInput":"../../components/SearchInput/SearchInput",
+    "Tabs":"../../components/Tabs/Tabs",
+    "FilterBar":"../../components/FilterBar/FilterBar",
+    "l-tag":"../../miniprogram_npm/lin-ui/tag/index",
+    "l-price":"../../miniprogram_npm/lin-ui/price/index",
+    "l-popup":"../../miniprogram_npm/lin-ui/popup",
+    "l-icon":"/miniprogram_npm/lin-ui/icon/index"
+  },
+  "navigationStyle": "custom",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark",
+  "onReachBottomDistance":300
+
+}

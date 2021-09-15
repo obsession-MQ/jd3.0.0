@@ -1,0 +1,23 @@
+<!--components/AllTypes/AllTypes.wxml-->
+<view class="container " wx:if="{{showTypeFlag}}">
+  <view class="top-container pad">
+    <text>已选：</text>
+    <text>全部分类</text>
+  </view>
+  <view class="type-list-container">
+    <view class="all pad">
+      <text></text>
+      <text>全部分类</text>
+    </view>
+    <l-collapse type="accordion" wx:for="{{20}}" wx:key="index">
+      <l-collapse-item title="{{item}}" l-class="type-item">
+        Lin UI 是基于微信小程序原生语法实现的组件库。遵循简洁，易用的设计规范。
+      </l-collapse-item>
+    </l-collapse>
+  </view>
+  <view class="cancle-container boxsbb df jcsb">
+    <view class="cancle" catch:tap="onClose">
+      <text>取消</text>
+    </view>
+  </view>
+</view>

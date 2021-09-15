@@ -1,0 +1,69 @@
+<!--components/FilterBar/FilterBar.wxml-->
+<scrol-view  class="container ">
+  <view class="info-container">
+    <view class="options-container " wx:if="{{showInfo}}">
+      <view class="send-container df jcsb border-r pad">
+        <text class="send">配送至</text>
+        <view class="send-address df " bind:tap="showAddress">
+          <view class="address">{{address}}</view>
+          <text class="iconfont icon-xiangyou1"></text>
+        </view>
+      </view>
+      <view class="df jcsa border-r pad tag-container">
+        <!-- <tabsFilterChange FilterList="{{FilterList}}" bindtabsFilterChange="handleFilter"></tabsFilterChange> -->
+        <block wx:for="{{FilterList}}" wx:key="index">
+          <view class="tag boxsbb {{ item.isChecked ?  'change-orange' :'' }}" bind:tap="onChecked" data-id="{{index}}"
+            data-item="分类">
+            {{item.con}}</view>
+        </block>
+      </view>
+      <view class="depart-container df jcsb border-r pad">
+        <text class="depart">分类</text>
+        <view class="all-depart" bind:tap="showType">
+          <text>全部分类</text>
+          <text class="iconfont icon-xiangyou1"></text>
+        </view>
+      </view>
+      <view class="price-container df col aifs border-r pad">
+        <text class="price-title">价格</text>
+        <view class="price df jcsa">
+          <input class="min df" type="number" value="{{minPrice}}" placeholder="最低价" />
+          <text class="link">-</text>
+          <input class="max df" type="number" value="{{maxPrice}}" placeholder="最高价" />
+        </view>
+        <view class="df jcsb border-r pad price-range">
+          <view wx:for="{{priceRange}}" wx:key="index" catch:tap="onChooseRange" data-range="{{item}}" data-id="{{index}}" data-item="价格">
+            <l-tag shape="circle" l-class="range-item {{ item.isChecked ?  'change-orangered' :'' }}" >
+              <view class="df col" >
+                <text>{{item.price}}</text>
+                <text class="percent">{{item.percent}}%选择</text>
+              </view>
+            </l-tag>
+          </view>
+        </view>
+      </view>
+      <view class="df col aifs border-r pad band-container">
+        <view class="df  title-container">
+          <text class="brand-title">品牌</text>
+          <view class="selected">
+            <text  wx:for="{{selected}}" wx:key="index">{{item}}、</text>
+          </view>
+        </view>
+        <view class="df jcsa border-r pad band-list">
+          <block wx:for="{{brandList}}" wx:key="index">
+            <view class="band-item boxsbb {{ item.isChecked ?  'change-orange' :'' }}" bind:tap="onChecked"
+              data-id="{{index}}" data-item="品牌" data-con="{{item.con}}">{{item.con}}</view>
+          </block>
+          <l-toast show="{{showToast}}" title="最多选六条" />
+        </view>
+      </view>
+    </view>
+    <view class="btn-container boxsbb df jcsb" wx:if="{{showInfo}}">
+      <text class="reset" bind:tap="resetFilter">重置</text>
+      <!-- <icon class="iconfont icon-shoucang1"></icon> -->
+      <text class="confirm" bind:tap="onCloseFilter">确认<text class="goods-num">(1000件商品)</text></text>
+    </view>
+    <AddressList addressList="{{GetAddressList}}" showAddressFlag="{{showAddressflag}}" bind:closeAddress="onShowInfo" bind:address="getAddress"/>
+    <AllTypes showTypeFlag="{{showTypeflag}}" bind:closeTypes="onShowInfo" />
+  </view>
+</scrol-view>

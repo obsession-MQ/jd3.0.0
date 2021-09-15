@@ -1,0 +1,34 @@
+<view class='select' wx:if="{{current.show}}">
+  <view class='choice mr'>
+    <view class="choice_title">
+      <view class="active_list ">
+        <view class='{{choiceActive==1?"active":""}}' bindtap='choiceActive' data-num="1">{{china}}</view>
+        <!-- <view wx:if="{{publicObj.multipleChoice }}">{{select}}</view> -->
+      </view>
+      <view class="active_list">
+        <view class='{{choiceActive==-1?"active":""}}' bindtap='choiceActive' data-num="-1">{{world}}</view>
+        <!-- <view wx:if="{{publicObj.multipleChoice }}">{{select}}</view> -->
+      </view>
+    </view>
+    <!-- 已经选择的地区 -->
+    <view class="choice_item choice_title">
+      <view wx:for="{{publicObj.selected}}" class='{{publicObj.page==index?"active":""}}' bindtap='choice'
+        data-item="{{item.select}}" data-index="{{index}}" wx:key="unique" style="margin-right: 30rpx">{{item.select}}</view>
+      <!-- 点击选择的地区 -->
+      <view wx:if="{{publicObj.multipleChoice }}" class='active'>{{select}}</view>
+    </view>
+  </view>
+  <!-- 滑动效果 -->
+  <scroll-view scroll-y="true" class='list' style="height: 441px;">
+    <!-- 循环出要出现的地区 -->
+    <view wx:for="{{publicObj.pageList}}" data-id="{{item.c}}" data-item="{{item.n||item}}" data-index="{{index}}"
+      wx:key="unique" bindtap='select'
+      class='select-list {{publicObj.selected[publicObj.page].key==index?"listActive":""}}'>
+      {{item.n||item}}
+      <!-- 地区后面的对勾 -->
+      <text wx:if='{{publicObj.selected[publicObj.page].key==index?"listActive":""}}' class="iconfont icon-gou1"></text>
+    </view>
+  </scroll-view>
+  <!-- 弹窗的遮罩、 -->
+  <!-- <view class='shade' bindtap="close"></view> -->
+</view>

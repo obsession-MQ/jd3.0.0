@@ -1,0 +1,180 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-08-20 11:19:02
+ * @LastEditTime: 2021-08-30 15:52:43
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \jd1.0.0\pages\index\index.wxml
+-->
+<view class="pyg_index">
+  <!--//TODO 搜索框 开始 -->
+  <view class="Search">
+    <SearchBox>搜索</SearchBox>
+
+  </view>
+  <!--//TODO 搜索框 结束 -->
+
+  <!--//TODO 头部 开始 -->
+  <view class="zzd">
+    <view class="Thead">
+      <!-- //! 首页 腕表 开始-->
+      <scroll-view enable-flex scroll-x scroll-left class="Tslide">
+        <view wx:for="{{shouted}}" wx:key="id" bindtap="handleItemTap" data-id="{{index}}">
+          <view class="Threads">{{item.text}}</view>
+          <view class="underline {{index===currentIndex?'dddd':''}}"></view>
+        </view>
+      </scroll-view>
+      <!-- //! 上下箭头按钮 -->
+      <view class="subscript">
+        <view class="subscriptv" bindtap="subscript">
+          <image class="jtx" src="../../icon/jtx.png" mode="widthFix" wx:if="{{!subscript1}}" />
+          <image class="jts" src="../../icon/jts.png" mode="widthFix" wx:if="{{subscript1}}" />
+        </view>
+      </view>
+      <!-- //!上下箭头 触发框 -->
+      <view class="subscript-Tslide" wx:if="{{subscript1}}">
+        <view class="quad">
+          <view class="subscript-Tslide-shout">全部分类</view>
+          <view class="subscript-Tslide-shout shou {{index===shouter?'shouttt':''}}" wx:for="{{shouted}}" wx:key="id"
+            bindtap="shouters" data-id="{{index}}">
+            <view class="subscript-Tslide-Threads">{{item.text}}</view>
+          </view>
+        </view>
+        <view class="shade" bindtap="shade"></view>
+
+      </view>
+    </view>
+  </view>
+  <!--//TODO 头部 结束 -->
+
+
+  <!--//TODO 轮播图 开始 -->
+  <view class="index_swiper">
+    <!-- //!背景色 -->
+    <view class="slider_bg"></view>
+    <!-- 高度自适应 -->
+    <swiper autoplay indicator-dots circular indicator-active-color="#ffffff">
+      <swiper-item wx:for="{{bannerList}}" wx:key="banner_id">
+        <navigator url="/pages/goods_detail/goods_detail?goods_id={{1790}}">
+          <image src="{{item.pic?item.pic:'https://ww1.sinaimg.cn/large/007rAy9hgy1g24by9t530j30i20i2glm.jpg'}}"
+            mode="widthFix"></image>
+        </navigator>
+      </swiper-item>
+    </swiper>
+  </view>
+  <!--//TODO 轮播图 结束 -->
+
+  <!-- //todo 京东超市 开始 -->
+  <view class="page-section">
+    <swiper indicator-active-color="#000" indicator-dots>
+      <block>
+        <swiper-item enable-flex>
+          <view class="swiper-ite {{item}}">
+            <view class="swiper-ite1" wx:key="id" wx:for="{{lube}}">
+              <image mode="widthFix" src="{{item.pick}}" />
+              <view class="swiper-text">{{item.text}}</view>
+            </view>
+          </view>
+        </swiper-item>
+        <swiper-item enable-flex>22</swiper-item>
+        <swiper-item enable-flex>333</swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <!-- //todo 京东超市 结束 -->
+
+  <!--//TODO 京东秒杀 开始 -->
+  <view class="sec_kill_floor">
+    <!-- //!京东秒杀 -->
+    <view class="title_wrap">
+      <view class="seckill-left-link">
+        <text class="seckill-left-link1">京东秒杀</text>
+        <text class="seckill-left-link2">18点场</text>
+        <text class="seckill-left-link3">00:16:07</text>
+      </view>
+      <view class="seckill-more-link">
+        <text class="seckill-more-link1">更多好货限时疯抢</text>
+        <view class="seckill-more-link2">
+          <image src="../../icon/jt.png" mode="widthFix" />
+        </view>
+      </view>
+    </view>
+
+    <!-- //!京东秒杀商品 -->
+    <view class="floor-container">
+      <scroll-view scroll-x scroll-left>
+        <view>
+          <view class="gator" wx:for="{{goodList}}" wx:key="good_id">
+            <navigator url="/pages/goods_detail/goods_detail?good_id={{1790}}">
+              <image src="{{item.img}}" mode="widthFix" />
+              <view class="goodList_text1">¥{{item.price}}</view>
+              <view class="goodList_text2">¥{{item.price}}</view>
+            </navigator>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+
+  <!--//TODO 京东秒杀 结束 -->
+
+  <!-- //TODO品牌闪购 购物大狂欢  开始-->
+  <view class="brand">
+    <view class="brand1" wx:for="{{goodType}}" wx:key="promotion_id">
+      <navigator url="/pages/goods_detail/goods_detail?good_id={{1790}}">
+        <view class="brand-title">
+          {{item.title}}
+        </view>
+        <view
+          class="brand-vice {{index===1?'vice1':''}} {{index===0?'vice0':''}} {{index===2?'vice2':''}} {{index===3?'vice3':''}}">
+          {{item.vice_title}}</view>
+        <view class="brand-pic">
+          <image
+            src="https://img10.360buyimg.com/mobilecms/s372x372_jfs/t1/110857/21/7153/96020/5eae6e43E01488fd5/f19b4bb2f996cdeb.jpg!q70.dpg.webp"
+            mode="widthFix" />
+        </view>
+      </navigator>
+    </view>
+  </view>
+  <!-- //TODO品牌闪购  结束-->
+
+  <!--//TODO 楼层 开始 -->
+  <view class="index_floor">
+    <viwe class="floor_group" wx:for="{{floorlist}}" wx:for-item="item1" wx:for-index="index1" wx:key="floor_title">
+      <view class="floor_title">
+        <image src="{{item1.floor_title.image_src}}" mode="widthFix"></image>
+      </view>
+      <view class="floor_list">
+        <navigator wx:for="{{item1.product_list}}" wx:for-item="item2" wx:for-index="index2" wx:key="name"
+          url="/pages/goods_list/goods_list?name={{item2.name}}">
+          <image mode="{{index2===0?'widthFix':'scaleToFill'}}" src="{{item2.image_src}}"></image>
+        </navigator>
+      </view>
+    </viwe>
+  </view>
+  <!--//TODO 楼层 结束 -->
+
+
+  <!-- //TODO 瀑布流商品 开始-->
+  <view class="find-similar">
+    <view class="similar-product" wx:for="{{goodList}}" wx:key="good_id">
+      <navigator url="/pages/goods_detail/goods_detail?good_id={{1790}}">
+        <view class="similar-posre">
+          <image src="{{item.img?item.img:'https://ww1.sinaimg.cn/large/007rAy9hgy1g24by9t530j30i20i2glm.jpg'}}"
+            mode="widthFix" />
+        </view>
+        <view class="similar-product-text">{{item.good_name?item.good_name:'垃圾商品无名字'}}</view>
+        <view class="similar-product-info">
+          <text class="similar-product-price">￥{{item.price}}</text>
+          <!-- <text class="guess-button"></text> -->
+        </view>
+        <view class="similar-pj">
+          <text class="similar-txt">500+条评论</text>
+          <text class="similar-txt">99%好评率</text>
+        </view>
+      </navigator>
+    </view>
+  </view>
+  <!-- //TODO 瀑布流商品 结束-->
+
+</view>

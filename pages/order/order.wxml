@@ -1,0 +1,92 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-08-28 11:02:09
+ * @LastEditTime: 2021-08-28 16:47:59
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \jd1.1.0\pages\orders\orders.wxml
+-->
+<view class="orders">
+    <view class="ordo">
+        <view class="orders-ordo">
+            <view class="complete {{index===currentIndex?'complete1':''}}" wx:for="{{complete}}" wx:key="id"
+                data-id="{{index}}" bindtap="complex">
+                <view class="complete_select">{{item.txt}}</view>
+            </view>
+        </view>
+        <view class="orders-ordo2" bindtap="subscript">
+            <image class="jtx" src="../../icon/jtx.png" mode="widthFix" wx:if="{{!subscript1}}" />
+            <image class="jts" src="../../icon/jts.png" mode="widthFix" wx:if="{{subscript1}}" />
+        </view>
+        <!--上下箭头 触发框-->
+        <view class="subscript-Tslide" wx:if="{{subscript1}}">
+            <view class="subscript-Tslide-shout">全部分类</view>
+            <view class="subscript-Tslide-shout shou {{index===curr?'shouttt':''}}" wx:for="{{shouted}}" wx:key="id"
+                bindtap="shouters" data-id="{{index}}">
+                <text class="subscript-Tslide-Threads">{{item.text}}</text>
+            </view>
+        </view>
+    </view>
+
+
+    <!-- //todo 已购买商品 开始 -->
+    <view class="ordo-list" wx:for="{{orderList}}" wx:key="index">
+        <view wx:for="{{item.childern}}" wx:for-item="item1" wx:for-index="index1" wx:key="index1">
+            <view class="ordo-list-shop">
+                <view class="shopLife">
+                    <image class="shopLife-pic1"
+                        src="https://img12.360buyimg.com/img/s40x40_jfs/t1/92233/26/19755/1782/5ea0194fEfa9c005c/fa406240530e25b6.png"
+                        mode="widthFix">
+                    </image>
+                    <text class=""> 京东自营</text>
+                    <image class="shopLife-pic2" src="../../icon/jt.png" mode="widthFix">
+                    </image>
+                </view>
+                <view class="shopRight">
+                    <view class="order_state cur" wx:if="{{item.status==1}}">等待付款</view>
+                    <view class="order_state" wx:if="{{item.status==2}}">已完成</view>
+                    <view class="order_del" wx:if="{{item.status==2}}"></view>
+                </view>
+            </view>
+            <view class="ordo-list-commodity">
+                <view class="commodity-pic">
+                    <image class="" src="{{item1.img}}" mode="widthFix" />
+                    <text class="commodity-pic-txt">{{item1.good_name.name}}</text>
+                    <view class="">
+                        x{{item1.num}}
+                    </view>
+                </view>
+                <view class="commodity-text">实付款￥{{item1.money}}</view>
+            </view>
+            <view class="ordo-list-buy">
+                <text class="buy1">看相似</text>
+                <text class="buy2" data-item="{{item1}}" bind:tap="Rebuy" wx:if="{{isShow}}">去支付</text>
+                <text class="buy2" data-item="{{item1}}" bind:tap="Rebuy" wx:else>再次购买</text>
+            </view>
+        </view>
+    </view>
+    <!-- //todo 已购买商品 完成 -->
+
+    <!-- //TODO 瀑布流商品 开始-->
+    <view class="find-similar">
+        <view class="similar-product" wx:for="{{goodList}}" wx:key="good_id">
+            <navigator url="/pages/goods_detail/goods_detail?goods_id={{item.banner_id}}">
+                <view class="similar-posre">
+                    <image
+                        src="{{item.img?item.img:'https://ww1.sinaimg.cn/large/007rAy9hgy1g24by9t530j30i20i2glm.jpg'}}"
+                        mode="widthFix" />
+                </view>
+                <view class="similar-product-text">{{item.good_name.name}}</view>
+                <view class="similar-product-info">
+                    <text class="similar-product-price">￥{{item.price}}</text>
+                    <!-- <text class="guess-button"></text> -->
+                </view>
+                <view class="similar-pj">
+                    <text class="similar-txt">500+条评论</text>
+                    <text class="similar-txt">99%好评率</text>
+                </view>
+            </navigator>
+        </view>
+    </view>
+    <!-- //TODO 瀑布流商品 结束-->
+</view>

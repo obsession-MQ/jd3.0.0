@@ -1,0 +1,158 @@
+<!--pages/pay/pay.wxml-->
+<view class="pay-head" bind:tap="toChooseAddress">
+  <view class="check-address">
+    <view class="check-top">
+      <text>{{address.name}}</text><text>{{address.phone}}</text>
+    </view>
+    <view class="check-botton">
+       {{address.detailed}}
+    </view>
+  </view>
+  <view class="check-address-right">
+    <image src="../../img/icon/you.png"></image>
+  </view>
+</view>
+<view class="pay-content">
+  <view class="store">
+    <text>JD</text> <text>京东自营</text>
+  </view>
+  <view class="content-good" wx:for="{{paycart}}" wx:key="{{index}}">
+    <view class="content-mid">
+      <view class="mid-left">
+        <image src="{{item.img}}"></image>
+      </view>
+      <view class="mid-right">
+        <view class="details">
+          {{item.good_name}}
+        </view>
+        <view style="color:gray;font-size:20rpx">{{item.sku[0].specs}}</view>
+        <view class="pay-mid">
+          <view class="pay-price">
+            <text>￥</text> <text>{{item.price}}</text>
+          </view>
+          <view class="pay-num">×{{item.num}}</view>
+        </view>
+        <view class="pay-day">
+          <view class="pay-day-top">
+            <image
+              src="//img11.360buyimg.com/jdphoto/s30x30_jfs/t24454/180/2585111474/1236/c5718bb0/5b863011Ncc8682f5.png">
+            </image>
+            <text>支持7天无理由退货（合约版不支持）</text>
+          </view>
+          <view class="pay-day-botton">
+            <image
+              src="//img11.360buyimg.com/jdphoto/s30x30_jfs/t26560/365/120314248/1589/1e82ec03/5b863c63N484da0be.png">
+            </image>
+            <text>不支持使用京东券</text>
+            <image
+              src="//img11.360buyimg.com/jdphoto/s30x30_jfs/t26866/245/112279834/912/e70ec77a/5b863013Ne69c7156.png">
+            </image>
+            <text>价格说明</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="distribution">
+      <text>配送</text>
+      <view class="distribution-right">
+        <view class="right-right">
+          <view class="right-top">
+            快速运输
+          </view>
+          <view class="right-botton">
+            预计8月29日24:00前送达
+          </view>
+        </view>
+        <view class="right-img">
+          <image src="../../img/icon/you.png"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="good-info">
+  <view class="info-totprice">
+    商品总额 <text>￥{{totalPrice}}</text>
+  </view>
+  <view class="info-freight">
+    运费 <text>免运费</text>
+  </view>
+  <view class="info-freight">
+    立减<text>-￥500.00</text>
+  </view>
+  <view class="info-freight">
+    优惠券 <text>-￥1000.00</text>
+  </view>
+  <view class="gift-show" wx:if="{{giftshow}}">
+    <view class="info-gift">
+      礼品卡 <view class="gife-right"><text> 无可用</text>
+        <image src="../../img/icon/you.png"></image>
+      </view>
+    </view>
+    <view class="info-gift">
+      红包 <view class="gife-right"><text> 无可用</text>
+        <image src="../../img/icon/stop.png"></image>
+      </view>
+    </view>
+    <view class="info-gift">
+      京豆 <view class="gife-right"><text> 共258，未满1000，不可用</text>
+        <image src="../../img/icon/stop.png"></image>
+      </view>
+    </view>
+    <view class="gift-hid" bindtap="PackGift">
+      收起不可用资产 <image src="../../img/icon/top.png"></image>
+    </view>
+  </view>
+  <view class="gift" bindtap="ShowGift" wx:if="{{show}}">
+    礼品卡、红包、京豆暂不可用 <image src="../../img/icon/xia.png"></image>
+  </view>
+  <view class="pay-all">
+    总计：<text>￥{{totalPrice}}</text>
+  </view>
+</view>
+<view class="invoice">
+  发票
+  <view class="invoice-left">
+    <text>普票(商品明细-个人)</text>
+    <image src="../../img/icon/you.png"></image>
+  </view>
+</view>
+<view class="pay-page">
+  <radio-group>
+    <label>
+      <view class="wx-pay">
+        <view class="wx-left">
+          <view class="wx-img">
+            <image src="../../img/icon/wxpay.png"></image>
+          </view>
+          <text>微信支付</text>
+        </view>
+        <view class="wx-check">
+          <radio checked="true" color="red" />
+        </view>
+      </view>
+      <view class="fr-pay">
+        <view class="fr-left">
+          <view class="fr-img">
+            <image src="../../img/icon/frpay.png"></image>
+          </view>
+          <text>找人代付</text>
+          <view class="pay-ti">
+            <image src="../../img/icon/ti.png"></image>
+          </view>
+        </view>
+        <view class="fr-check">
+          <radio checked="true" color="red" />
+        </view>
+      </view>
+    </label>
+  </radio-group>
+</view>
+<view class="pay-interface">
+  <view class="interface-left">
+    <text>总计：</text><text>{{totalPrice}}</text>
+  </view>
+  <view class="interface-right" bind:tap="toPay">
+    微信支付
+  </view>
+</view>

@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "l-mask":"/miniprogram_npm/lin-ui/mask/index",
+    "l-popup":"../../miniprogram_npm/lin-ui/popup"
+
+  }
+}

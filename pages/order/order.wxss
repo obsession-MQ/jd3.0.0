@@ -1,0 +1,192 @@
+/* pages/orders/orders.wxss */
+.orders {
+  background-color: #f5f5f5;
+}
+.orders .ordo {
+  position: relative;
+  margin-bottom: 20rpx;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.orders .ordo .orders-ordo {
+  width: 85%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 60rpx;
+  height: 120rpx;
+}
+.orders .ordo .orders-ordo .complete {
+  height: 120rpx;
+  border-bottom: 7rpx solid #fff;
+  line-height: 120rpx;
+}
+.orders .ordo .orders-ordo .complete .complete_select {
+  font-size: 30rpx;
+}
+.orders .ordo .orders-ordo .complete1 {
+  border-bottom: 7rpx solid #f2270c;
+  color: #f2270c;
+}
+.orders .ordo .orders-ordo2 {
+  width: 15%;
+}
+.orders .ordo .orders-ordo2 .jtx {
+  padding: 0 40rpx;
+  width: 100%;
+  height: 40rpx;
+  border-left: 5rpx solid #bfbfbf;
+}
+.orders .ordo .orders-ordo2 .jts {
+  padding: 0 40rpx;
+  width: 100%;
+  height: 40rpx;
+  border-left: 5rpx solid #bfbfbf;
+}
+.orders .ordo .subscript-Tslide {
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  position: absolute;
+  z-index: 33;
+  background-color: #ffffff;
+  left: 0;
+  top: 120rpx;
+  width: 750rpx;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 15rpx;
+}
+.orders .ordo .subscript-Tslide .subscript-Tslide-shout {
+  width: 220rpx;
+  margin: 10rpx 10rpx;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 14rpx 0;
+}
+.orders .ordo .subscript-Tslide .subscript-Tslide-shout .subscript-Tslide-Threads {
+  font-size: 24rpx;
+}
+.orders .ordo .subscript-Tslide .shou {
+  background-color: #f2f2f2;
+  border: 1px solid #fff;
+}
+.orders .ordo .subscript-Tslide .shouttt {
+  background-color: #fff !important;
+  border: 1px solid #e03c2b !important;
+}
+.orders .ordo-list {
+  background-color: #fff;
+  width: 95%;
+  padding: 20rpx;
+  border-radius: 20px;
+  margin: 0 auto;
+}
+.orders .ordo-list .ordo-list-shop {
+  display: flex;
+  justify-content: space-between;
+}
+.orders .ordo-list .ordo-list-shop .shopLife-pic1 {
+  width: 30rpx;
+}
+.orders .ordo-list .ordo-list-shop .shopLife-pic2 {
+  width: 25rpx;
+}
+.orders .ordo-list .ordo-list-commodity {
+  border-bottom: 1rpx solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20rpx;
+}
+.orders .ordo-list .ordo-list-commodity .commodity-pic {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 20rpx 0 0 0;
+}
+.orders .ordo-list .ordo-list-commodity .commodity-pic image {
+  border-radius: 10px;
+  width: 300rpx;
+}
+.orders .ordo-list .ordo-list-commodity .commodity-pic .commodity-pic-txt {
+  font-size: 30rpx;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  overflow: hidden;
+  margin-left: 20rpx;
+}
+.orders .ordo-list .ordo-list-commodity .commodity-text {
+  text-align: right;
+}
+.orders .ordo-list .ordo-list-buy {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 15rpx;
+}
+.orders .ordo-list .ordo-list-buy .buy1 {
+  width: 150rpx;
+  border: 2rpx solid #d4d4d4;
+  border-radius: 20px;
+  text-align: center;
+  line-height: 50rpx;
+}
+.orders .ordo-list .ordo-list-buy .buy2 {
+  margin-left: 20rpx;
+  width: 160rpx;
+  border: 2rpx solid #f44f39;
+  border-radius: 20px;
+  text-align: center;
+  line-height: 50rpx;
+}
+.orders .find-similar {
+  margin-top: 20rpx;
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 30rpx;
+}
+.orders .find-similar .similar-product {
+  margin-right: 30rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 45%;
+  margin-bottom: 20rpx;
+  background-color: #fff;
+  border-radius: 10px;
+}
+.orders .find-similar .similar-product .similar-posre image {
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.orders .find-similar .similar-product .similar-product-text {
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  overflow: hidden;
+  font-size: 28rpx;
+  padding: 0 15rpx;
+}
+.orders .find-similar .similar-product .similar-product-info {
+  padding-top: 20rpx;
+  padding-left: 15rpx;
+}
+.orders .find-similar .similar-product .similar-product-info .similar-product-price {
+  color: red;
+  font-size: 40rpx;
+  font-weight: 600;
+}
+.orders .find-similar .similar-product .similar-pj {
+  padding: 10rpx 15rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #999;
+}

@@ -1,0 +1,157 @@
+/* pages/setting/index.wxss */
+.setting_page{
+    background-color:#F7F7F7;
+    min-height: 300rpx;
+}
+.setting_head{
+    background-color: #fff;
+    border-bottom-right-radius: 20rpx;
+    border-bottom-left-radius: 20rpx;
+    margin-bottom: 30rpx;
+}
+.setting_title{
+    display: flex;
+    padding: 20rpx;
+}
+.title_left{
+    flex: 4;
+}
+.title_right{
+    flex: 2;
+    font-size: 22rpx;
+    color: #F45E49;
+    text-align: right;
+}
+.baik{
+    font-size: 28rpx;
+    margin-right: 8rpx;
+}
+.login_info{
+    padding: 10rpx 20rpx 30rpx 20rpx;
+}
+.login_info_cont{
+    width: 100%;
+    height: 170rpx;
+    border: 1px solid #F45E49;
+    border-radius: 20rpx;
+    background-color: #FFF9F9;
+    overflow: hidden;
+}
+.now_status::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.now_status{
+    width: 100%;
+}
+.status_text{
+    width: 130rpx;
+    text-align: center;
+    font-size: 22rpx;
+    color: #F45E49;
+    background-color: #FFE4E4;
+    padding: 5rpx 10rpx;
+    float: right;
+    border-bottom-left-radius: 20rpx;
+}
+.user_info{
+    display: flex;
+    align-items: center;
+    padding: 0 20rpx;
+}
+.infos{
+    flex: 8;
+    display: flex;
+}
+.user_head_img{
+    width: 16%;
+}
+.user_head_img image{
+    background-color: #FFF9F9;
+    border-radius: 50%;
+}
+.name{
+    font-size: 22rpx;
+    margin-top: 10rpx;
+    margin-left: 20rpx;
+}
+.nickname{
+    font-size: 22rpx;
+}
+.user_nikename{
+    display: flex;
+    margin-bottom: 5rpx;
+    color: #333;
+}
+.account{
+    margin-left: 15rpx;
+    padding: 0rpx 10rpx;
+    font-size: 19rpx;
+    background-color: #FDF0F0;
+    color: #F45E49;
+    border-radius: 20rpx;
+}
+.user_username{
+    color: #8d8c8c;
+    font-size: 22rpx;
+    line-height: 40rpx;
+}
+.user_more{
+    flex: 2;
+    text-align: right;
+    font-size: 36rpx;
+    color: #bbbaba;
+}
+.setting_form{
+
+}
+.my_address{
+    background-color: #fff;
+    border-radius: 20rpx;
+    margin-bottom: 26rpx;
+}
+.address{
+    display: flex;
+    line-height: 70rpx;
+    padding: 0 20rpx;
+    border-bottom: 2px solid #F7F7F7;
+}
+.add_left{
+    flex: 1;
+    color: #333;
+    font-size: 30rpx;
+}
+.add_right{
+    flex: 1;
+    text-align: right;
+    font-size: 22rpx;
+    color: #999898;
+}
+.mana{
+    font-size: 24rpx;
+    font-weight: bold;
+    color: #bebcbc;
+}
+.cancel_login{
+    padding: 0 20rpx;
+}
+.cancel_text{
+    width: 100%;
+    line-height: 70rpx;
+    border: 1px solid #CCCCCC;
+    border-radius: 30rpx;
+    text-align: center;
+    font-size: 30rpx;
+    color: #333;
+    background-color: #fff;
+}
+.jd_logo{
+    width: 28%;
+    min-height: 200rpx;
+    margin: 40rpx auto;
+}
+.icon-shuoming{
+    color: #bbbaba;
+    font-size: 28rpx;
+}

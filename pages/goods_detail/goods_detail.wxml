@@ -1,0 +1,560 @@
+<scroll-view scroll-y="{{isScroll}}" scroll-top='{{top}}' bindscroll="onPageScroll">
+  <view class="detail_swiper">
+    <view class="{{IsFlag?'fiexd':''}}">
+      <view class="search {{IsFlag?'fiexd':''}}">
+        <SearchInput title="搜索京东商品" bindtabsItemChange="handlechange" Ishow="true" my-class="width"></SearchInput>
+      </view>
+      <view class='main_title' wx:if="{{fixedInputPhone}}">
+        <view wx:for="{{TitleList}}" data-index="{{index}}" data-id="b{{index}}" bindtap='handleTitle' wx:key="*this"
+          class='{{index==navActive?"navActive":""}}'>
+          <text>{{item.name}}</text>
+        </view>
+      </view>
+    </view>
+    <scroll-view scroll-y="true" scroll-into-view="{{toView}}" scroll-with-animation='true'
+      style="height:{{winheight}}">
+      <view class="main" id="b{{indexOut}}">
+        <view class="banner" id="block1">
+          <swiper class="bannerswipers" current="{{currentSwiper}}" bindchange="swiperChange" circular>
+            <swiper-item wx:for="{{goodsObj.img}}" wx:key="item" bindtap="handlePreviewImage" data-url="{{item}}">
+              <image src="{{item}}"></image>
+            </swiper-item>
+          </swiper>
+          <!--重置小圆点的样式  -->
+          <view class='bannerNum'>{{(currentSwiper+1)}}
+            <view class="name">/{{goodsObj.img.length}}</view>
+          </view>
+        </view>
+        <view class="goods_main">
+          <view class="goods_title_wrap">
+            <view class="goods_title pd">
+              <view class="goods_price">
+                <view class="price_i">￥</view>
+                <view class="price">{{goodsObj.price}}</view>
+                <!-- <view class="price_i">.00</view> -->
+                <view class="Discount" wx:if="{{show}}">
+                  <view class="Discount_title">折后<view class="price_i num">￥</view>
+                    <view class="Discountname">{{goodsObj.promotion_price}}</view>
+                  </view>
+                </view>
+              </view>
+              <view class="tips">
+                <view class="Pricecut">
+                  <navigator class="iconfont icon-jiangjia">
+                    <view class="name">降价提醒</view>
+                  </navigator>
+                </view>
+                <view class="Pricecut">
+                  <view class="iconfont {{isCollect?'icon-shoucangxin':'icon-shoucang1'}}" bindtap="handleCollect">
+                    <view class="name">{{isCollect?'收藏':'已收藏'}}"</view>
+                  </view>
+                </view>
+              </view>
+            </view>
+            <view class="goods_title reduction pd">
+              <view class="goods_price reductionT">
+                <view class="item">满3000-30</view>
+                <view class="item">限购</view>
+                <view class="item">赠品</view>
+              </view>
+              <view class="tips">
+                <view class="Pricecut">
+                  <navigator class="disk">
+                    <text>查看</text>
+                    <view class="iconfont icon-xiangyou"></view>
+                  </navigator>
+                </view>
+              </view>
+            </view>
+            <view class="goods_name_row pd">
+              <view class="goods_name"><text class="icon-ziying iconfont"></text>{{goodsObj.good_name.name}}</view>
+            </view>
+            <view class="goods_name_row pd">
+              <view class="goods_name webkit">{{goodsObj.good_name.name}}</view>
+            </view>
+            <view class="Type_wrap pd">
+              <view class="Type_item">
+                <view class="item_time Typeitem">
+                  <view class="iconfont icon-shangshishijian"></view>
+                  <view class="timer">上市时间</view>
+                  <view class="time_name">2019年9月</view>
+                </view>
+                <view class="item_Size Typeitem">
+                  <view class="iconfont icon-pingmuchicun"></view>
+                  <view class="timer">屏幕尺寸</view>
+                  <view class="time_name">6.1英寸</view>
+                </view>
+                <view class="item_Thickness Typeitem">
+                  <view class="iconfont icon-jishenhoudu"></view>
+                  <view class="timer">机身厚度</view>
+                  <view class="time_name">以官网为准</view>
+                </view>
+                <view class="item_machine Typeitem">
+                  <view class="iconfont icon-shuangqiajileixing"></view>
+                  <view class="timer">双卡机类型</view>
+                  <view class="time_name">双卡双待</view>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view class="tools pd df">
+            <!-- 参数 -->
+            <view class="tools_main df" bindtap="handledownp" data-operation="{{1}}">
+              <view class="tools_name">已选</view>
+              <view class="tools_Parameter"><text wx:for="{{checkde}}" wx:key="index"
+                  class="option_list">{{item.val}}，</text>
+                <text class="option_list">{{goodsNum}}个</text>
+              </view>
+              <view class="iconfont icon-shenglvehao"></view>
+            </view>
+            <!-- 地址 -->
+            <view class="tools_main df mt" bindtap="handledownp" data-operation="{{2}}">
+              <view class="tools_name">送至</view>
+              <view class="tools_Parameter">
+                <view class="loaction webkit">
+                  <input name="name" value='{{isaddress}}' disabled='true' />
+                </view>
+                <view class="iconfont icon-jipiao">京东物流
+                  <text class="loaction_name">现货</text>
+                  <text class="loaction_time">，11.10前下单，预计今天(08月21日)送达</text>
+                </view>
+              </view>
+              <view class="iconfont icon-shenglvehao"></view>
+            </view>
+            <!-- 服务 -->
+            <view class="tips_icon" bindtap="handledownp" data-operation="{{3}}">
+              <view class="df tips_name">
+                <text class="iconfont icon-dui"><text class="icon_name">99元免基础运费</text></text>
+                <view class="iconfont icon-dui"><text class="icon_name">京东发货&售后</text></view>
+                <view class="iconfont icon-dui"><text class="icon_name">可配送海外</text></view>
+                <view class="iconfont icon-dui"><text class="icon_name">部分收货</text></view>
+                <view class="iconfont icon-dui"><text class="icon_name">送货上门</text></view>
+                <view class="iconfont icon-dui"><text class="icon_name">365天原厂维修</text></view>
+                <view class="iconfont icon-dui"><text class="icon_name">免举证退换货</text></view>
+                <view class="iconfont icon-dui"><text class="icon_name">自提</text></view>
+              </view>
+              <view class="iconfont icon-shenglvehao"></view>
+            </view>
+          </view>
+          <!-- 排行 -->
+          <view class="Ranking mt df pd">
+            <view class="df Ranking_name">
+              <text class="iconfont icon-paihangbang"><text class="Ranking_title">排行榜 </text><text
+                  class="Ranking_title">5000元到5999元手机热卖第2名</text>
+              </text>
+            </view>
+            <view class="iconfont icon-xiangyou"></view>
+          </view>
+          <!-- 评论 -->
+          <view class="Comment mt df pd">
+            <view class="com_title df">
+              <view class="df Comment_name">
+                <view class="CommentH">
+                  <view class="line"></view>
+                  <text class="Comment_title">评价</text>
+                  <text class="Comment_title small">10万+条</text>
+                </view>
+              </view>
+              <view class="comment_nums df">
+                <view class="nums_name">好评度90%</view>
+                <view class="iconfont icon-xiangyou"></view>
+              </view>
+            </view>
+            <view class="comment_main df">
+              <view class="com_top df">
+                <view class="com_list">充电快速(620)</view>
+                <view class="com_list">充电快速(620)</view>
+                <view class="com_list">充电快速(620)</view>
+              </view>
+              <view class="com_item df">
+                <view class="comment_item">
+                  <view class="item_name df">
+                    <view class="com_wrap">
+                      <image
+                        src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg95.699pic.com%2Fphoto%2F40158%2F5297.gif_wh300.gif%21%2Fgifto%2Ftrue&refer=http%3A%2F%2Fimg95.699pic.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1632231672&t=6bfca6ed89091b12769f60ef91ba30b5"
+                        mode="widthFix"></image>
+                      <text class="com_auther">你好</text>
+                      <text class="iconfont icon-start"></text>
+                      <text class="iconfont icon-start"></text>
+                      <text class="iconfont icon-start"></text>
+                      <text class="iconfont icon-start"></text>
+                      <text class="iconfont icon-start"></text>
+                    </view>
+                    <view class="time df">2021-08-03</view>
+                  </view>
+                  <view class="com_wrap_list">
+                    <text class="com_dis">海信(Hisense)LED50MU8600UC 50英寸 4K超高清智能电视 HDR超薄曲面</text>
+                    <scroll-view scroll-x="true" class="image-group">
+                      <image src="{{item}}" wx:for="{{CommImg}}" wx:key="id" data-src="{{item}}" data-list="{{CommImg}}"
+                        bindtap="handlePreviewImageComm">
+                      </image>
+                    </scroll-view>
+                    <view class="versioncolor">紫色</view>
+                  </view>
+                </view>
+                <view class="comment_item pt">
+                  <view class="item_name df">
+                    <view class="com_wrap">
+                      <image
+                        src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg95.699pic.com%2Fphoto%2F40158%2F5297.gif_wh300.gif%21%2Fgifto%2Ftrue&refer=http%3A%2F%2Fimg95.699pic.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1632231672&t=6bfca6ed89091b12769f60ef91ba30b5"
+                        mode="widthFix"></image>
+                      <text class="com_auther">你好</text>
+                      <text class="iconfont icon-start"></text>
+                      <text class="iconfont icon-start"></text>
+                      <text class="iconfont icon-start"></text>
+                      <text class="iconfont icon-start"></text>
+                      <text class="iconfont icon-start"></text>
+                    </view>
+                    <view class="time df">2021-08-03</view>
+                  </view>
+                  <view class="com_wrap_list bb">
+                    <text class="com_dis">海信(Hisense)LED50MU8600UC 50英寸 4K超高清智能电视 HDR超薄曲面</text>
+                    <scroll-view scroll-x="true" class="image-group">
+                      <image src="{{item}}" wx:for="{{CommImg}}" wx:key="id" data-src="{{item}}" data-list="{{CommImg}}"
+                        bindtap="handlePreviewImageComm">
+                      </image>
+                    </scroll-view>
+                    <view class="versioncolor">紫色</view>
+                  </view>
+                </view>
+                <view catchtap="goTop" class="dingbu df" wx:if="{{goTop}}">
+                  <text class="icon-dingbu iconfont"></text>
+                </view>
+              </view>
+            </view>
+            <view class="comment_show mr df" id="block2">
+              <navigator class="comshow">查看全部评价</navigator>
+            </view>
+            <view class="com_title df answer">
+              <view class="df ans_item">
+                <view class="df Comment_name">
+                  <view class="CommentH">
+                    <view class="line"></view>
+                    <text class="Comment_title">问答</text>
+                  </view>
+                </view>
+                <view class="comment_nums df">
+                  <view class="nums_name">查看全部回答</view>
+                  <view class="iconfont icon-xiangyou"></view>
+                </view>
+              </view>
+              <view class="answer_list df pd">
+                <view class="answer_list_item df">
+                  <text class="iconfont icon-wen"></text>
+                  <text>发热严重吗</text>
+                </view>
+                <text class="comfs">共有33条回答</text>
+              </view>
+              <view class="answer_list df pd">
+                <view class="answer_list_item df">
+                  <text class="iconfont icon-wen"></text>
+                  <text>买1+9pro还是买11pro xdm帮帮我</text>
+                </view>
+                <text class="comfs">共有21条回答</text>
+              </view>
+            </view>
+          </view>
+          <!-- 店铺 -->
+          <view class="Comment mt df pd conditioner">
+            <view class="com_title df">
+              <view class="df Con_name">
+                <view class="CommentH Conditi df">
+                  <image src="https://z3.ax1x.com/2021/08/23/h9mlXq.png" mode="widthFix"></image>
+                  <text class="Conditi_name">小米京东自营旗舰店</text>
+                  <text class="iconfont icon-ziying"></text>
+                </view>
+                <view class="Con_nums df">
+                  <view class="Con_list">
+                    <text class="nums_name">5519.8万</text>
+                    <view class="nums_fans">粉丝人数</view>
+                  </view>
+                  <view class="line">
+                  </view>
+                  <view class="Con_list">
+                    <text class="nums_name">1716</text>
+                    <view class="nums_fans">全部商品</view>
+                  </view>
+                </view>
+                <view class="con_collect df">
+                  <view class="collect_item">
+                    <text class="iconfont icon-changyongtubiao-xianxingdaochu-zhuanqu- collec"></text>
+                    <text class="collec_name">收藏店铺</text>
+                  </view>
+                  <view class="collect_item">
+                    <text class="iconfont icon-dianpu collec"></text>
+                    <text class="collec_name">进入店铺</text>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+          <!-- 高价回收 -->
+          <view class="High_price df mt">
+            <view class="High_list df">
+              <text class="iconfont icon-shoujihuishou"></text>
+              <view class="listitem">
+                <text class="High_name">高价回收</text>
+                <view class="list_name">旧品回收,免费股价,极速旧品回收,免费股价,极速</view>
+              </view>
+            </view>
+            <view class="High_list df ml">
+              <text class="iconfont icon-ershou"></text>
+              <view class="listitem">
+                <text class="High_name ">同款二手</text>
+                <view class="list_name">专业质检</view>
+              </view>
+            </view>
+          </view>
+          <!-- 猜你喜欢 -->
+          <view class="goodslist_main Comment mt df pd">
+            <view class="goods_list df">
+              <text class="goods_title {{isTitle==1?'isTitleActive':''}}" bindtap="handleItemTap"
+                data-num="1">猜你喜欢</text>
+              <text class="goods_title {{isTitle==-1?'isTitleActive':''}}" bindtap="handleItemTap"
+                data-num="-1">同款二手</text>
+            </view>
+            <view class="list_item">
+              <swiper indicator-dots="true" duration="350" class="goods_group" bindchange="likeNumberChange"
+                current="{{likeNumber}}">
+                <swiper-item wx:for="{{GoodsList}}" wx:for-index="i" wx:key="index" class="goods_item">
+                  <view class="goods_item" wx:for="{{item}}" wx:for-item="i" wx:for-index="j" wx:key="j">
+                    <navigator>
+                      <image src="{{i.img[0]}}"></image>
+                      <view class="text">
+                        <text class="nums">￥</text>
+                        <text>{{i.good_name.name}}</text>
+                        <view class="nums">{{i.price}}</view>
+                      </view>
+                    </navigator>
+                  </view>
+                </swiper-item>
+              </swiper>
+              <view class="bottom df" wx:if="{{More}}">
+                <text class="More">查看更多</text>
+              </view>
+            </view>
+          </view>
+          <view class="goods_info Comment mt df pd">
+            <view class="goods_info_title">
+              <view class="line"></view>
+              <text>详情</text>
+            </view>
+            <view class="goods_info_content">
+              <view class="info_item">
+                <view class="goods_det">规格参数</view>
+                <view class="goods_table">
+                  <view class="spu" wx:for="{{goodsObj.info[0].colour}}" wx:key="index">
+                    <text class="spb_title">{{item.spu}}</text>
+                    <text class="spu_val">{{item.val}}</text>
+                  </view>
+                </view>
+              </view>
+              <view class="line"></view>
+              <view class="goods_det">商品介绍</view>
+              <view class="goods_table" id="block3">
+                <view class="distrction" wx:for="{{goodsObj.info[0].imgs}}" wx:key="index">
+                  <image src="{{item}}"></image>
+                </view>
+              </view>
+            </view>
+            <view class="bigBox">
+              <navigator class=" {{changeStyleFlag ? '':'first_tab'}}" wx:for="{{goodsList}}" wx:key="goods_id"
+                url="/pages/goods_detail/goods_detail?good_id={{item.good_id}}">
+                <view class="goods_item {{changeStyleFlag?'df':''}}">
+                  <view class="goods_img_wrap">
+                    <image src="{{item.img}}"></image>
+                  </view>
+                  <view class="goods_info_wrap">
+                    <view class="goods_name">{{item.good_name}}</view>
+                    <view class="goods_list_content">
+                      <l-price unit="￥" unit-size="27rpx" value="{{item.price}}" mode="text" color="orangered" size="35"
+                        bold="600" autofix>666</l-price>
+                      <text class="self-support">自营</text>
+                      <view class="comment-container">
+                        <text>20</text>
+                        <text>条评价 </text>
+                        <text> 20</text>
+                        <text>条好评</text>
+                      </view>
+                      <view class="shop df">
+                        <text class="shop-name">店铺</text>
+                        <view class=" toShop df">
+                          <text>进店</text>
+                          <text>></text>
+                        </view>
+                      </view>
+                    </view>
+                  </view>
+                </view>
+              </navigator>
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  <view class="Pop-up">
+    <!-- 参数 -->
+    <view class="show" wx:if="{{showModalStatus}}" bindtap="hideModal" data-operation="{{1}}"></view>
+    <view class="tools_show" wx:if="{{showModalStatus}}" animation="{{animationData}}">
+      <view class="show_wrap">
+        <view class="row_item">
+          <view class="img">
+            <image src="{{goodsObj.img[0]}}" bindtap="preview" data-src="{{goodsObj.img[0]}}"></image>
+          </view>
+          <view class="row_name">
+            <view class="price">
+              <view class="show_price">￥</view>
+              <view class="price">{{goodsObj.price}}</view>
+              <!-- <view class="show_price">.00</view> -->
+            </view>
+            <view class="options">
+              <view class="option_item df">已选
+                <text wx:for="{{checkde}}" wx:key="index" class="option_list">{{item.val}},</text>
+                <text class="option_list">{{goodsNum}}个</text>
+              </view>
+            </view>
+            <view class="cancel iconfont icon-cha" bindtap="cancel" data-operation="{{1}}"></view>
+          </view>
+        </view>
+        <view style="height:100vh;overflow: auto">
+          <view class="row_item category_wrap">
+            <view class="category" wx:for="{{goodsObj.info[0].edition.specList}}" wx:key="index">
+              <text class="category">{{item.titel}}</text>
+              <view class="category_title">
+                <view wx:for="{{item.list}}" wx:for-item="i" wx:for-index="j" wx:key="j"
+                  class="category_item {{i.check?'check':''}}" bindtap="handleChecked" data-index="{{j}}"
+                  data-titel="{{item.titel}}">
+                  {{i.val}}</view>
+              </view>
+            </view>
+          </view>
+          <view class="goods_nums">
+            <view class="num_title">数量</view>
+            <view class="numer">
+              <view class="numdel" bindtap="handleNum" data-num="-1">-</view>
+              <input type="number" value="{{goodsNum}}" bindblur="handleInputNum" />
+              <view class="numdel" bindtap="handleNum" data-num="1">+</view>
+            </view>
+          </view>
+        </view>
+        <view class="btn" wx:if="{{ShowCart}}">
+          <button class="btnAdd" data-cart="1" bindtap="handleCardAdd">加入购物车</button>
+          <button class="buy">立即购买</button>
+        </view>
+        <view class="btn" wx:else>
+          <button class="Sure" data-cart="-1" bindtap="handleCardAdd">确定</button>
+        </view>
+      </view>
+    </view>
+    <!-- 地址 -->
+    <view class="show" wx:if="{{showAdres}}" bindtap="hideModal" data-operation="{{2}}"></view>
+    <view class="tools_show adress" wx:if="{{showAdres}}" animation="{{animationData}}">
+      <view class="show_wrap">
+        <view class="ads_title">
+          <view bindtap="choiceback" wx:if="{{IsBack}}">
+            <text class="iconfont icon-xiangzuo">返回</text>
+          </view>
+          <navigator bindtap="choiceback" wx:else>
+            <text class="iconfont icon-xiangzuo" wx:if="{{IsBack}}">返回</text>
+          </navigator>
+          <text class="ads_name">配送至</text>
+          <icon class="iconfont icon-cha" bindtap="cancel" data-operation="{{2}}"></icon>
+        </view>
+        <view class="ads_ht">
+          <view class="adress_item" wx:for="{{GetAddressList}}" bindtap="handleAddress" data-name="{{item.detailed}}"
+            wx:key="address_id" data-id="{{item.address_id}}">
+            <text class="iconfont {{detailed===item.address_id?'icon-gou2':'icon-yuan'}}"
+              data-id="{{item.address_id}}"></text>
+            <text>{{item.detailed}}</text>
+          </view>
+        </view>
+        <view class="btn btnads">
+          <button class="Btnother" bindtap='cityFocus'>选择其他地址</button>
+        </view>
+        <!-- 地址选择 -->
+        <view class="address_box ">
+          <v-select current="{{city}}" bind:parentEvent='city' wx:if="{{dis}}" />
+        </view>
+      </view>
+    </view>
+    <!-- 服务 -->
+    <view class="show" wx:if="{{showtips}}" bindtap="hideModal" data-operation="{{3}}"></view>
+    <view class="tools_show adress" wx:if="{{showtips}}" animation="{{animationData}}">
+      <view class="show_wrap">
+        <view class="ads_title">
+          <text></text>
+          <text class="ads_name">服务</text>
+          <icon class="iconfont icon-cha" bindtap="cancel" data-operation="{{3}}"></icon>
+        </view>
+        <view class="ads_ht">
+          <view class="service_item">
+            <text class="iconfont icon-dui"></text>
+            <text class="service_name">99元免基础运费</text>
+          </view>
+          <view class="service_dis">所选地址自营订单满99元免基础运费(10kg内)，超出重量加收1元/kg续重运费</view>
+          <view class="service_item">
+            <text class="iconfont icon-dui"></text>
+            <text class="service_name">送货上门</text>
+          </view>
+          <view class="service_dis">由京东发货并提供售后服务</view>
+          <view class="service_item">
+            <text class="iconfont icon-dui"></text>
+            <text class="service_name">可配送海外</text>
+          </view>
+          <view class="service_dis">支持收货地址为海外</view>
+          <view class="service_item">
+            <text class="iconfont icon-dui"></text>
+            <text class="service_name">部分收货</text>
+          </view>
+          <view class="service_dis">如果收件人收货时发现部分货物存在缺少配件、物流损等情形，京东物流提供订单半收服务</view>
+          <view class="service_item">
+            <text class="iconfont icon-dui"></text>
+            <text class="service_name">送货上门</text>
+          </view>
+          <view class="service_dis">京东快递为您提供送货上门服务</view>
+          <view class="service_item">
+            <text class="iconfont icon-dui"></text>
+            <text class="service_name">365天原厂维修</text>
+          </view>
+          <view class="service_dis">商品出现故障，京东提供上门取送、检测和维修</view>
+          <view class="service_item">
+            <text class="iconfont icon-dui"></text>
+            <text class="service_name">免举证退换货</text>
+          </view>
+          <view class="service_dis">15天内性能故障，京东提供原厂授权的检测服务</view>
+          <view class="service_item">
+            <text class="iconfont icon-dui"></text>
+            <text class="service_name">自提</text>
+          </view>
+          <view class="service_dis">我们提法多种自提服务，包括京东自提点、自助提货柜、京东校园派、京东星配站、京东便民站等服务</view>
+        </view>
+        <view class="btn btnads">
+          <button class="Btnother">确认</button>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="btm_tool">
+    <view class="tool_item">
+      <view class="iconfont icon-dianpu"></view>
+      <view>店铺</view>
+      <button open-type="share"></button>
+    </view>
+    <view class="tool_item">
+      <view class="iconfont icon-fuwupingjia-kefu-select"></view>
+      <view>客服</view>
+      <button open-type="contact"></button>
+    </view>
+    <!-- <view class="tool_item" bindtap="handleCard"> -->
+    <navigator url="/pages/cart/cart" open-type="switchTab" class="tool_item">
+      <view class="add {{isAdd?'donghua':''}}">{{goodNum}}</view>
+      <view class="iconfont icon-gouwuche"></view>
+      <view>购物车</view>
+    </navigator>
+    <!-- </view> -->
+    <view class="show" wx:if="{{showtips}}" bindtap="hideModal" data-operation="{{4}}"></view>
+    <view class="tool_item btn_cart" bindtap="handledownp" data-operation="{{4}}">加入购物车</view>
+    <view class="tool_item btn_buy" bindtap="handledownp" data-operation="{{5}}">立即购买</view>
+  </view>
+</scroll-view>

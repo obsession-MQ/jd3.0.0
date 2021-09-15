@@ -1,0 +1,127 @@
+<view class="user_page">
+    <!-- 头部 -->
+    <view class="user_head">
+        <view class="user_info">
+            <view class="info_head">
+                <view class="user_head_pic">
+                    <image class=""  bindtap="handleLogin" src="//img11.360buyimg.com/jdphoto/s120x120_jfs/t21160/90/706848746/2813/d1060df5/5b163ef9N4a3d7aa6.png" mode="widthFix" />
+                    <view class="real_name"  bindtap="handleLogin">待实名认证></view>
+                </view>
+                <view class="user_nickname">
+                    <view class="nickname">{{nickName}}</view>
+                    <view class="jxz" wx:if="{{isLogin}}">
+                        <view class="jxz_view">京享值></view>
+                        <view class="jxz_view">家庭号></view>
+                    </view>
+                    <view class="click_login iconfont icon-gerenye" wx:else>
+                        点击登录
+                    </view>
+                </view>
+            </view>
+            <view class=" {{isLogin?'setting iconfont icon-shezhi':''}}" bindtap="handleSetting"></view>
+        </view>
+        <view class="shopping_info">
+            <view class="collet" wx:for="{{shopingList}}" wx:key="*this">
+                <view class="collect_num">{{isLogin? item.num:'-'}}</view>
+                <view class="collect_text">{{item.title}}</view>
+            </view>
+        </view>
+        <view class="jd_plus">
+            <view class="plus_title">
+                <text class="iconfont icon-VIPday" selectable="false" space="false" decode="false"></text>
+                PLUS | 免费试用 立领1张运费券
+            </view>
+            <view class="free">
+                <view class="free_text">
+                    0元试用
+                    <text class="free_more iconfont icon-gengduo" selectable="false" space="false" decode="false"></text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <!-- 个人中心的内容 -->
+    <view class="user_center">
+        <view class="user_content">
+            <view class="content_form1">
+                <view class="order_form">
+                    <navigator class="obligation">
+                        <view class="obli_icon dfk iconfont icon-daifukuan" style="font-size: 50rpx;"></view>
+                        <view class="obli_text">待付款</view>
+                    </navigator>
+                    <navigator class="obligation">
+                        <view class="obli_icon recip iconfont icon-tubiaolunkuo-" style="font-size: 44rpx;"></view>
+                        <view class="obli_text ">待收货</view>
+                    </navigator>
+                    <navigator class="obligation">
+                        <view class="obli_icon iconfont icon-31daipingjia" style="font-size: 50rpx;"></view>
+                        <view class="obli_text">待评价</view>
+                    </navigator>
+                    <navigator class="obligation after_sale">
+                        <view class="obli_icon iconfont icon-tuihuanhuo" style="font-size: 44rpx;"></view>
+                        <view class="obli_text">退还 / 售后</view>
+                    </navigator>
+                    <navigator class="obligation orders" bindtap="handleOrder" url="/pages/order/order">
+                        <view class="obli_icon all_order iconfont icon-dingdan" style="font-size: 40rpx;"></view>
+                        <view class="obli_text">全部订单</view>
+                        <view class="check_bill">查看发票</view>
+                        <view class="user_tri1 iconfont icon-gengduo" style="font-size: 40rpx;"></view>
+                    </navigator>
+                </view>
+            </view>
+            <view class="content_form1">
+                <view class="order_form">
+                    <view class="obligation" wx:for="{{myAssetList}}" wx:key="*this">
+                        <view class="obli_icon">{{ isLogin?item.num:'-'}}</view>
+                        <view class="obli_text">{{item.title}}</view>
+                    </view>
+                    <view class="obligation assets">
+                        <view class="obli_icon my_asset  iconfont icon-wodezichan" style="font-size: 50rpx;"></view>
+                        <view class="obli_text">我的资产</view>
+                        <view class="user_tri1 iconfont icon-gengduo"></view>
+                    </view>
+                </view>
+            </view>
+            <view class="game_interact">
+                <view class="game_title">游戏与互动</view>
+                <view class="game_cont">
+                    <view class="fruit">
+                        <view class="fruit_img">
+                            <image class="" src="/icon/fruite.png" mode="widthFix" lazy-load="false" binderror="" bindload="" />
+                        </view>
+                        <view class="fruit_text">免费水果</view>
+                    </view>
+                    <view class="fruit">
+                        <view class="fruit_img">
+                            <image class="" src="/icon/cash.png" mode="widthFix" lazy-load="false" binderror="" bindload="" />
+                        </view>
+                        <view class="fruit_text">领现金</view>
+                    </view>
+                    <view class="fruit">
+                        <view class="fruit_img">
+                            <image class="" src="/icon/infomation.png" mode="widthFix" lazy-load="false" binderror="" bindload="" />
+                        </view>
+                        <view class="fruit_text">爆品情报</view>
+                    </view>
+                    <view class="fruit">
+                        <view class="fruit_img">
+                            <image class="" src="/icon/grain.png" mode="widthFix" lazy-load="false" binderror="" bindload="" />
+                        </view>
+                        <view class="fruit_text">京豆乐园</view>
+                    </view>
+                </view>
+            </view>
+            <view class="game_interact">
+                <view class="game_title">工具与服务</view>
+                <view class="instru_cont">
+                    <view class="serve" wx:for="{{instrumentData}}" wx:key="text">
+                        <view class="fruit_img">
+                            <image class="" src="{{item.img}}" mode="widthFix" lazy-load="false" binderror="" bindload="" />
+                        </view>
+                        <view class="fruit_text">{{item.text}}</view>
+                    </view>
+                </view>
+            </view>
+           
+        </view>
+    </view>
+</view>

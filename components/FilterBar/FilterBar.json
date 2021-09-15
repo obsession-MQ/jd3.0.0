@@ -1,0 +1,11 @@
+{
+  "component": true,
+  "usingComponents": {
+    "l-grid":"/miniprogram_npm/lin-ui/grid/index",
+    "l-grid-item":"/miniprogram_npm/lin-ui/grid-item/index",
+    "l-tag":"/miniprogram_npm/lin-ui/tag/index",
+    "AddressList":"../../components/AddressList/AddressList",
+    "AllTypes":"../../components/AllTypes/AllTypes",
+    "l-toast":"/miniprogram_npm/lin-ui/toast/index"
+  }
+}

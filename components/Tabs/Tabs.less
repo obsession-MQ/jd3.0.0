@@ -1,0 +1,99 @@
+.tabs {
+  width: 100%;
+  position: relative;
+  margin-top: 120rpx;
+  .box {
+    position: relative;
+    .tabs_title {
+      width: 650rpx;
+      padding: 0 20rpx;
+      position: relative;
+      .tabs_item {
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+        padding: 15rpx 0;
+        font-size: 30rpx;
+        position: relative;
+
+        .flag {
+          width: 30rpx;
+          height: 30rpx;
+          border-bottom: 6rpx solid red;
+          position: absolute;
+          top: 40rpx;
+          border-radius: 50%;
+        }
+
+        .iconfont {
+          font-size: 25rpx;
+        }
+
+        .pull-group {
+          justify-content: center;
+          position: absolute;
+          right: 30rpx;
+          top: 25rpx;
+
+          .min,
+          .max {
+            margin: -8rpx;
+          }
+        }
+
+        .bold {
+          font-weight: 1000;
+          font-style: italic
+        }
+      }
+
+      .changeStyle {
+        position: absolute;
+        right: -100rpx;
+      }
+    }
+  }
+
+  .tabs_content {
+    z-index: -2;
+    width: 100%;
+    height: 100%;
+    .bg-class {
+      position: absolute;
+      height: 100vh;
+    }
+
+    .sort-container {
+      position: absolute;
+      top: 80rpx;
+      height: 100%;
+      width: 100%;
+      z-index: 1;
+
+      .mask {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0px;
+        left: 0px;
+
+      }
+
+      .box {
+        width: 100%;
+        background-color: rgb(253, 253, 253);
+        border-bottom-left-radius: 13px;
+        border-bottom-right-radius: 13px;
+
+        .sort-list {
+          padding: 10rpx 30rpx;
+          font-size: 30rpx;
+
+          .sort-item {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

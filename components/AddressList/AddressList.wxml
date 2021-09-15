@@ -1,0 +1,32 @@
+<!--components/AddressList/AddressList.wxml-->
+<view class="container" wx:if="{{showAddressFlag}}">
+  <view class="top-container df">
+    <view class="back-container" catch:tap="onClose">
+      <text></text>
+      <text>返回</text>
+    </view>
+    <text class="send-to pad">配送至</text>
+  </view>
+  <view wx:if="{{toChoose}}">
+    <!-- <l-radio-group placement="column" bind:linchange="onChangeTap" l-class="checkedBox">
+      <l-radio wx:for-items="{{addressList}}" wx:key="{{item.value}}" key="{{item.value}}" data-id="{{item.address_id}}" checked="{{item.isChecked}}"
+        disabled="{{item.disabled}}" l-class="checked pad" bind:tap="handleAddress"data-name="{{item.detailed}}">
+        {{item.detailed}}
+      </l-radio>
+    </l-radio-group> -->
+    <view class="ads_ht">
+      <view class="adress_item df" wx:for="{{addressList}}" bindtap="handleAddress" data-name="{{item.detailed}}"
+        wx:key="address_id" data-id="{{item.address_id}}">
+        <text class="iconfont {{detailed===item.address_id?'icon-gou2':'icon-yuan'}}"
+          data-id="{{item.address_id}}"></text>
+          <text class="ads_name">{{item.detailed}}</text>
+      </view>
+    </view>
+    <view class="btn-box">
+      <view class="choose-other-address pad">
+        <text bindtap='cityFocus'>选择其他地址</text>
+      </view>
+    </view>
+  </view>
+  <address-select bindcloseSelectAddress="showList" current="{{city}}" bind:parentEvent='city' wx:if="{{!toChoose}}" />
+</view>

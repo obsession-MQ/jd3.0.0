@@ -1,0 +1,401 @@
+.pyg_index {
+  //!全局背景色
+  background-color: #f4f4f4;
+  //TODO 头部 开始
+  .Search {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 300;
+    width: 100%;
+    background-color: #c82519;
+    padding: 0rpx 0rpx 10rpx 0;
+  }
+  .zzd {
+    position: fixed;
+    width: 100%;
+    z-index: 300;
+    top: 79rpx;
+    .Thead {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      position: relative;
+      background-color: #c82419;
+      //! 首页 腕表
+      .Tslide {
+        width: 90%;
+        height: 50rpx;
+        white-space: nowrap;
+        display: flex;
+        padding: 20rpx 0rpx 20rpx 20rpx;
+
+        view {
+          margin-right: 20rpx;
+          .Threads {
+            color: #fff;
+            font-size: 26rpx;
+          }
+          .active {
+            background: linear-gradient(
+              to right,
+              #ffffff,
+              #f1a9a1,
+              #efa198,
+              #ec9086,
+              #e76c5f,
+              #e35c4d,
+              #e35545
+            );
+            border-left: 2rpx solid #fff;
+          }
+          .underline {
+            width: 80%;
+            height: 7rpx;
+          }
+          .dddd {
+            background: linear-gradient(
+              to right,
+              #ffffff,
+              #f1a9a1,
+              #efa198,
+              #ec9086,
+              #e76c5f,
+              #e35c4d,
+              #e35545
+            );
+          }
+        }
+      }
+
+      //! 上下箭头按钮
+      .subscript {
+        width: 10%;
+        z-index: 8888;
+        height: 50rpx;
+        // padding: 20rpx 0;
+        margin-top: 20rpx;
+
+        .subscriptv {
+          width: 100%;
+          height: 50rpx;
+          .jtx {
+            width: 25rpx;
+            height: 25rpx;
+          }
+          .jts {
+            width: 25rpx;
+            height: 25rpx;
+          }
+        }
+      }
+
+      //!上下箭头 触发框
+      .subscript-Tslide {
+        position: absolute;
+        z-index: 33;
+        left: 0;
+        top: 90rpx;
+        width: 750rpx;
+        background-color: #B5B5B5;
+        .shade {
+          width: 100%;
+          height: 100vh;
+          position: absolute;
+          background-color: #999;
+          z-index: 9999;
+          left: 0;
+          opacity: 0.7;
+        }
+        .quad {
+          padding: 0 10rpx;
+          background-color: #ffffff;
+          border-bottom-left-radius: 20px;
+          border-bottom-right-radius: 20px;
+          display: flex;
+          flex-wrap: wrap;
+          .subscript-Tslide-shout {
+            width: 125rpx;
+            margin: 20rpx 10rpx;
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 14rpx 0;
+            .subscript-Tslide-Threads {
+              font-size: 24rpx;
+            }
+          }
+          .shou {
+            background-color: #f2f2f2;
+            border: 1px solid #fff;
+          }
+          .shouttt {
+            background-color: #fff !important;
+            border: 1px solid #e03c2b !important;
+          }
+        }
+      }
+    }
+  }
+  //! 轮播图
+  .index_swiper {
+    padding: 0 35rpx;
+    margin-top: 167rpx;
+    position: relative;
+    .slider_bg {
+      background-image: linear-gradient(0deg, #f1503b, #c82519 50%);
+      width: 100%;
+      height: 200rpx;
+      left: 0;
+      position: absolute;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+      // z-index: 300;
+    }
+    swiper {
+      height: 270rpx;
+      image {
+        width: 100%;
+        border-radius: 15px;
+      }
+    }
+  }
+  //! 京东超市
+  .page-section {
+    // background-color: #c3264c;
+    swiper {
+      height: 350rpx;
+      swiper-item {
+        .swiper-ite {
+          padding: 20rpx;
+          display: flex;
+          flex-wrap: wrap;
+          .swiper-ite1 {
+            width: 20%;
+            image {
+              padding: 0 25rpx;
+            }
+            .swiper-text {
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // TODO //!京东秒杀
+  .sec_kill_floor {
+    margin: 20rpx 20rpx 0 20rpx;
+    background-color: #fff;
+    border-radius: 20rpx;
+    padding: 20rpx;
+    //!京东秒杀时间
+    .title_wrap {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 10rpx;
+      .seckill-left-link {
+        display: flex;
+        align-items: center;
+        .seckill-left-link1 {
+          font-size: 28rpx;
+          font-weight: 550;
+        }
+        .seckill-left-link2 {
+          background-color: #f52100;
+          font-size: 15rpx;
+          border-bottom-left-radius: 10px;
+          border-top-left-radius: 10px;
+          margin-left: 20rpx;
+          color: #ffece1;
+          padding: 6rpx 10rpx;
+        }
+        .seckill-left-link3 {
+          padding: 5rpx 10rpx;
+          border: 2rpx solid #f52100;
+          font-size: 15rpx;
+          border-bottom-right-radius: 10px;
+          border-top-right-radius: 10px;
+          color: #f52100;
+          font-weight: 600;
+        }
+      }
+      .seckill-more-link {
+        display: flex;
+        align-items: center;
+        .seckill-more-link1 {
+          font-size: 20rpx;
+          color: #8b8b8b;
+        }
+        .seckill-more-link2 {
+          width: 20rpx;
+          image {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    //!京东秒杀商品
+    .floor-container {
+      scroll-view {
+        view {
+          // justify-content: center;
+          display: flex;
+          background-color: #fff;
+          border-radius: 20rpx;
+          .gator {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0 10rpx;
+            image {
+              width: 150rpx;
+              border-radius: 10px;
+            }
+            .goodList_text1 {
+              color: #d7351f;
+              text-align: center;
+            }
+            .goodList_text2 {
+              color: #707070;
+              font-size: 20rpx;
+              text-decoration: line-through;
+            }
+          }
+        }
+      }
+    }
+  }
+  //!品牌闪购  开始
+  .brand {
+    margin: 20rpx;
+    display: flex;
+    background-color: #fff;
+    border-radius: 20rpx;
+    .brand1 {
+      width: 25%;
+      padding: 15rpx;
+      text-align: center;
+      .brand-title {
+        font-size: 30rpx;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        display: -webkit-box;
+        overflow: hidden;
+      }
+      .brand-vice {
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        display: -webkit-box;
+        overflow: hidden;
+        font-size: 20rpx;
+      }
+      .vice0 {
+        color: #7063aa;
+      }
+      .vice1 {
+        color: #c3264c;
+      }
+      .vice2 {
+        color: #ce7851;
+      }
+      .vice3 {
+        color: #6581cc;
+      }
+
+      .brand-pic {
+        margin-top: 20rpx;
+        image {
+          border-radius: 20rpx;
+        }
+      }
+    }
+  }
+
+  //! 楼层 开始
+  .index_floor {
+    .floor_group {
+      .floor_title {
+        padding: 10rpx 0;
+        image {
+          width: 100%;
+        }
+      }
+      .floor_list {
+        // 清除浮动
+        overflow: hidden;
+        navigator {
+          float: left;
+          width: 33.33%;
+          &:nth-last-child(-n + 4) {
+            height: calc(33.33vw * 386 / 232 / 2);
+            border-left: 10rpx solid #fff;
+          }
+          &:nth-child(2),
+          &:nth-child(3) {
+            border-bottom: 10rpx solid #fff;
+          }
+          image {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  //TODO 瀑布流商品
+  .find-similar {
+    margin-top: 20rpx;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 30rpx;
+    // justify-content: space-evenly;
+    .similar-product {
+      margin-right: 30rpx;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 45%;
+      margin-bottom: 20rpx;
+      background-color: #fff;
+      border-radius: 10px;
+      .similar-posre {
+        image {
+          width: 100%;
+          border-top-left-radius: 10px;
+          border-top-right-radius: 10px;
+        }
+      }
+      .similar-product-text {
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        display: -webkit-box;
+        overflow: hidden;
+        font-size: 28rpx;
+        padding: 0 15rpx;
+      }
+      .similar-product-info {
+        padding-top: 20rpx;
+        padding-left: 15rpx;
+        .similar-product-price {
+          color: red;
+          font-size: 40rpx;
+          font-weight: 600;
+        }
+      }
+      .similar-pj {
+        padding: 10rpx 15rpx;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        color: #999;
+      }
+    }
+  }
+}

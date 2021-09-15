@@ -1,0 +1,18 @@
+<view class="category">
+  <view class="category_title">
+    <view wx:for="{{category}}" wx:key="id" class="category_item {{item.isActive?'active':''}}" bindtap="handleItemTap"
+      data-index="{{index}}">{{item.value}}</view>
+  </view>
+</view>
+<view class="category">
+  <view class="category_title">
+    <view wx:for="{{Version}}" wx:key="id" class="category_item Version_item {{item.isActive?'active':''}}" bindtap="handleItemVersion"
+      data-index="{{index}}">{{item.value}}</view>
+  </view>
+</view>
+<view class="category">
+  <view class="category_title">
+    <view wx:for="{{Howbuy}}" wx:key="id" class="category_item Howbuy {{item.isActive?'active':''}}" bindtap="handleItemHowbuy"
+      data-index="{{index}}">{{item.value}}</view>
+  </view>
+</view>

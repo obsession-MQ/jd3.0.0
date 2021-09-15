@@ -1,0 +1,69 @@
+<view class="user_info_page">
+    <view class="user_info_form">
+        <view class="user_name" bindtap="chooseimage">
+            <view class="name_title">头像</view>
+            <view class="name_english">
+                <image
+                    src="//img11.360buyimg.com/jdphoto/s120x120_jfs/t21160/90/706848746/2813/d1060df5/5b163ef9N4a3d7aa6.png"
+                    mode="widthFix" style="width: 55rpx;height: 55rpx;" bindtap="popups" /><text
+                    class="iconfont icon-xiangyou1" style="padding-right: 20rpx;"></text>
+                <view class="detail-page-icon">
+
+                </view>
+            </view>
+        </view>
+        <view class="user_name">
+            <view class="name_title">用户名</view>
+            <view class="name_english" style="padding-right: 20rpx;">jd_NWgJ6451kj</view>
+        </view>
+        <view class="user_name">
+            <view class="name_title">昵称</view>
+            <view class="name_english" style="padding-right: 20rpx;" bindtap="popup" data-position="bottom">
+                {{user.nick_name}}<text class="iconfont icon-xiangyou1"></text></view>
+            <page-container show="{{show}}" round="true" overlay duration position="bottom"
+                custom-style="{{customStyle}}">
+                <view class="detail-page">
+                    <view class="revise_title">
+                        <text class="revise_title_text">修改昵称</text>
+                        <text class="iconfont icon-cha1 icon" bindtap="exit"></text>
+                    </view>
+                    <view class="revise_inp">
+                        <input type="text" value="{{inputValue}}" />
+                        <text class="iconfont icon-cha11" bindtap="clearInp"></text>
+                    </view>
+                    <view class="hint">
+                        <text>限制4-20个字符，可由中英文、数字、“_”、“-”组成</text>
+                    </view>
+                    <view class="revise_btn">
+                        <button bindtap="exit" style="border: 1rpx solid #eee;">取消</button>
+                        <button style="color: #fff;background-color: #ff4f4f;" bindtap="editUser">确认</button>
+                    </view>
+                </view>
+            </page-container>
+        </view>
+        <view class="user_name">
+            <view class="name_title">性别</view>
+            <view class="name_english">
+                <picker bindchange="pickSex" value="{{ gender }}" class="sex" range="{{ columns }}">
+                    <view>
+                        {{ columns[gender] == "" ? "请输入性别" : "" }}{{ columns[gender] }}
+                    </view>
+                </picker>
+            </view>
+            <text class="iconfont icon-xiangyou1" style="color: #999;padding-right:20rpx"></text>
+        </view>
+        <view class="user_name">
+            <view class="name_title">出生日期</view>
+            <view class="name_english" style="display: flex;justify-content: center;align-items: center;">
+                <picker mode="multiSelector" bindchange="bindMultiPickerChange"
+                    bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+                    <input value='{{time}}' placeholder='选择时间' />
+                </picker>
+                <text class="iconfont icon-xiangyou1"></text>
+            </view>
+        </view>
+    </view>
+    <view class="logo">
+        <image class="" src="/icon/jd_logo.png" mode="widthFix" />
+    </view>
+</view>

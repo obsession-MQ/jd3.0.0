@@ -1,0 +1,32 @@
+.border-r{
+  border-radius: 13px;
+  background-color: white;
+  color: rgb(34, 34, 34);
+  font-size: 30rpx;
+  margin-bottom:30rpx;
+}
+.df{
+  display: flex;
+  align-items: center;
+}
+.pad{
+  padding:30rpx;
+}
+.boxsbb{
+  box-sizing: border-box;
+}
+.col{
+  flex-direction: column;
+}
+.jcsb{
+  justify-content: space-between;
+}
+.jcsa{
+  justify-content: space-around;
+}
+.jcfs{
+  justify-content: flex-start;
+}
+.aifs{
+  align-items: flex-start;
+}

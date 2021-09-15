@@ -1,0 +1,26 @@
+<view class="address_page">
+    <view class="address_cont">
+        <scroll-view class="scroll" scroll-y>
+            <view class="address_items" wx:for="{{addressList}}" wx:key="address_id">
+                <view class="addr_box">
+                    <view class="user_info">
+                        <text class="name">{{item.name}}</text>
+                        <text class="phone_num">{{item.phone}}</text>
+                    </view>
+                    <view class="address_text">
+                        <view class="address"><text class="default_text" wx:if="{{item.default>0}}">默认</text> {{item.detailed}}</view>
+                        <view class="edit" bindtap="handleEdit" data-index="{{index}}">编辑</view>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+    <view class="add_button">
+        <view class="wx_import">
+            <view><text class="wx_icon iconfont icon-weixin"></text>微信导入</view>
+        </view>
+        <view class="wx_import add_newAdress">
+            <view bindtap="handleAddAddr">新增收货地址</view>
+        </view>
+    </view>
+</view>

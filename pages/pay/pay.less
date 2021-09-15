@@ -1,0 +1,384 @@
+/* pages/pay1/pay1.wxss */
+page{
+  background-color: rgb(247,247,247);
+}
+.pay-head{
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  .check-address{
+    padding-left: 10px;
+    text:nth-child(1){
+      font-size: 16px;
+      color: rgb(98,98,98);
+    }
+    text:nth-child(2){
+      font-size: 16px;
+      font-weight: 600;
+      padding-left: 18px;
+    }
+    .check-botton{
+      padding-top: 6px;
+      color: rgb(98,98,98);
+    }
+  }
+  .check-address-right{
+    image{
+      width:14px;
+      height: 14px;
+    }
+    line-height: 44px;
+    padding-right: 4px;
+  }
+  padding-bottom: 16px;
+  background: #fff url(../../img/icon/bb.png);
+  background-size: 64px 5px;
+}
+.pay-content{
+  background-color: rgb(255,255,255);
+  margin: 10px 0px;
+  padding: 0 10px;
+  border-bottom: 1px solid rgb(229,229,229);
+  .content-good{
+    padding-top: 20px;
+    .content-mid{
+      display: flex;
+      .mid-left{
+        image{
+          width: 75px;
+          height: 75px;
+        }
+      }
+      .mid-right{
+        padding-left: 20px;
+        min-width: 0;
+        .details{
+          /*这个单词的意思是强制在一行显示 */
+          white-space: nowrap;
+          /* 溢出的部分隐藏 */
+          overflow: hidden;
+          /* 文字溢出的时候用省略号显示 */
+          text-overflow: ellipsis;
+        }
+        .pay-mid{
+          display: flex;
+          justify-content: space-between;
+          .pay-price{
+            color: red;
+            font-weight: 600;
+            padding-top: 10px;
+          }
+          .pay-num{
+            line-height: 41px;
+            color: rgb(141, 138, 138);
+            font-size: 14px;
+          }
+        }
+        .pay-day{
+          .pay-day-top{
+            image{
+              width: 14px;
+              height: 14px;
+              vertical-align: middle;
+            }
+            text{
+              vertical-align: middle;
+              font-size: 13px;
+              color: rgb(153,153,153);
+              display: inline-block;
+              padding-left: 5px;
+            }
+          }
+          .pay-day-botton{
+            image:nth-child(1){
+              width: 14px;
+              height: 14px;
+              vertical-align: middle;
+            }
+            text:nth-child(2){
+              vertical-align: middle;
+              font-size: 13px;
+              color: rgb(153,153,153);
+              display: inline-block;
+              padding-left: 5px;
+            }
+            image:nth-child(3){
+              width: 14px;
+              height: 14px;
+              vertical-align: middle;
+              margin-left: 6px;
+            }
+            text:nth-child(4){
+              vertical-align: middle;
+              font-size: 13px;
+              color: rgb(153,153,153);
+              display: inline-block;
+              padding-left: 5px;
+            }
+          }
+        }
+      }
+    }
+    .distribution{
+      padding-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 20px;
+      text{
+        font-size: 13px;
+        color: rgb(58, 57, 57);
+      }
+      .distribution-right{
+        display: flex;
+        .right-right{
+          text-align: right;
+          .right-top{
+            font-size: 12px;
+          }
+          .right-botton{
+            font-size: 11px;
+            color: rgb(153,153,153);
+            padding-top: 5px;
+          }
+        }
+        .right-img{
+          padding-left: 10px;
+          line-height: 35px;
+          // height: 20px;
+          // width: 20px;
+          image{
+            width: 10px;
+            height: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+.good-info{
+  padding-top: 10px;
+  background-color: rgb(255,255,255);
+  .info-totprice{
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    padding: 10px 10px;
+    text{
+      font-size: 12px;
+      font-weight: 500;
+      padding-right: 20px;
+    }
+  }
+  .info-freight{
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    padding: 10px 10px;
+    text{
+      font-size: 12px;
+      padding-right: 20px;
+      color: red;
+    }
+  }
+  .gift-show{
+    .info-gift{
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+      padding: 10px 10px;
+      text{
+        font-size: 12px;
+        padding-right: 10px;
+        color: #999999;
+      }
+      image{
+        width: 12px;
+        height: 12px;
+      }
+    }
+    .gift-hid{
+      font-size: 12px;
+      text-align: center;
+      color: rgb(102,102,102);
+      padding: 10px 0;
+      image{
+        width: 12px;
+        height: 12px;
+      }
+    }
+  }
+  .gift{
+    font-size: 12px;
+    color: rgb(102,102,102);
+    text-align: center;
+    padding: 10px 0;
+    image{
+      width: 12px;
+      height: 18px;
+      padding-top: 6px;
+    }
+  }
+  .pay-all{
+    border-top: 1px solid rgb(240,240,240);
+    text-align: right;
+    font-size: 14px;
+    padding: 10px 0px;
+    padding-right:30px;
+    text{
+      color: red;
+      font-weight: bold;
+    }
+  }
+}
+.invoice{
+  margin-top: 10px;
+  font-size: 14px;
+  display: flex;
+  background-color: rgb(255,255,255);
+  padding: 10px 10px;
+  justify-content: space-between;
+  .invoice-left{
+    display: flex;
+  text{
+    font-size: 12px;
+    color: #999999;
+  }
+  image{
+    width: 12px;
+    height: 12px;
+    margin-top: 3px;
+    margin-left: 8px;
+  }
+}
+}
+.pay-page{
+  margin-bottom: 50px;
+  margin-top: 10px;
+  background-color: rgb(255,255,255);
+  .wx-pay{
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    .wx-left{
+      display: flex;
+      .wx-img{
+        image{
+          width: 18px;
+          height: 18px;
+        }
+      }
+      text{
+        font-size: 13px;
+        padding-left: 10px;
+      }
+    }
+    .wx-check{
+      checkbox .wx-checkbox-input{
+        border-radius: 50%;/* 圆角 */
+        width: 34rpx; /* 背景的宽 */
+        height: 34rpx; /* 背景的高 */
+      } 
+    checkbox .wx-checkbox-input.wx-checkbox-input-checked{
+        border: 1px transparent solid;
+        background: red;
+    }
+    checkbox .wx-checkbox-input.wx-checkbox-input-checked::before{
+      border-radius: 50%;/* 圆角 */
+      width: 40rpx;/* 选中后对勾大小，不要超过背景的尺寸 */
+      height: 40rpx;/* 选中后对勾大小，不要超过背景的尺寸 */
+      line-height: 40rpx;
+      text-align: center;
+      font-size:30rpx; /* 对勾大小 30rpx */
+      color:#fff; /* 对勾颜色 白色 */
+      background: transparent;
+      transform:translate(-50%, -50%) scale(1);
+      -webkit-transform:translate(-50%, -50%) scale(1);
+    }
+    }
+  }
+  .fr-pay{
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    .fr-left{
+      display: flex;
+      .pay-ti{
+        padding-left: 5px;
+        image{
+          width: 12px;
+          height: 12px;
+        }
+      }
+      .fr-img{
+        image{
+          width: 29px;
+          height: 20px;
+        }
+      }
+      text{
+        font-size: 13px;
+        padding-left: 4px;
+      }
+    }
+    .fr-check{
+      text{
+        font-size: 12px;
+        color: #999999;
+        padding-right: 5px;
+      }
+      padding-right: 5px;
+      checkbox .wx-checkbox-input{
+        border-radius: 50%;/* 圆角 */
+        width: 34rpx; /* 背景的宽 */
+        height: 34rpx; /* 背景的高 */
+      } 
+    checkbox .wx-checkbox-input.wx-checkbox-input-checked{
+        border: 1px transparent solid;
+        background: red;
+    }
+    checkbox .wx-checkbox-input.wx-checkbox-input-checked::before{
+      border-radius: 50%;/* 圆角 */
+      width: 40rpx;/* 选中后对勾大小，不要超过背景的尺寸 */
+      height: 40rpx;/* 选中后对勾大小，不要超过背景的尺寸 */
+      line-height: 40rpx;
+      text-align: center;
+      font-size:30rpx; /* 对勾大小 30rpx */
+      color:#fff; /* 对勾颜色 白色 */
+      background: transparent;
+      transform:translate(-50%, -50%) scale(1);
+      -webkit-transform:translate(-50%, -50%) scale(1);
+    }
+    }
+  }
+}
+.pay-interface{
+  padding: 5px 10px;
+  box-shadow: #c0c0c0 0px 14px 6px 14px ;
+  width: 100vw;
+  position: fixed;
+  z-index: 10000;
+  background-color: rgb(255,255,255);
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  .interface-left{
+    line-height: 40px;
+    text:nth-child(1){
+      font-size: 16px;
+    }
+    text:nth-child(2){
+      font-size: 15px;
+      color: red;
+    }
+  }
+  .interface-right{
+    width: 154px;
+    height: 40px;
+    background-color: rgb(6,186,4);
+    text-align: center;
+    line-height: 40px;
+    border-radius: 20px;
+    color: white;
+  }
+}

@@ -1,0 +1,86 @@
+.tabs {
+  width: 100%;
+  position: relative;
+  margin-top: 120rpx;
+}
+.tabs .box {
+  position: relative;
+}
+.tabs .box .tabs_title {
+  width: 650rpx;
+  padding: 0 20rpx;
+  position: relative;
+}
+.tabs .box .tabs_title .tabs_item {
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  padding: 15rpx 0;
+  font-size: 30rpx;
+  position: relative;
+}
+.tabs .box .tabs_title .tabs_item .flag {
+  width: 30rpx;
+  height: 30rpx;
+  border-bottom: 6rpx solid red;
+  position: absolute;
+  top: 40rpx;
+  border-radius: 50%;
+}
+.tabs .box .tabs_title .tabs_item .iconfont {
+  font-size: 25rpx;
+}
+.tabs .box .tabs_title .tabs_item .pull-group {
+  justify-content: center;
+  position: absolute;
+  right: 30rpx;
+  top: 25rpx;
+}
+.tabs .box .tabs_title .tabs_item .pull-group .min,
+.tabs .box .tabs_title .tabs_item .pull-group .max {
+  margin: -8rpx;
+}
+.tabs .box .tabs_title .tabs_item .bold {
+  font-weight: 1000;
+  font-style: italic;
+}
+.tabs .box .tabs_title .changeStyle {
+  position: absolute;
+  right: -100rpx;
+}
+.tabs .tabs_content {
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+}
+.tabs .tabs_content .bg-class {
+  position: absolute;
+  height: 100vh;
+}
+.tabs .tabs_content .sort-container {
+  position: absolute;
+  top: 80rpx;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+.tabs .tabs_content .sort-container .mask {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+}
+.tabs .tabs_content .sort-container .box {
+  width: 100%;
+  background-color: #fdfdfd;
+  border-bottom-left-radius: 13px;
+  border-bottom-right-radius: 13px;
+}
+.tabs .tabs_content .sort-container .box .sort-list {
+  padding: 10rpx 30rpx;
+  font-size: 30rpx;
+}
+.tabs .tabs_content .sort-container .box .sort-list .sort-item {
+  width: 100%;
+}

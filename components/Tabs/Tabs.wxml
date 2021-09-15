@@ -1,0 +1,34 @@
+<view class="tabs tab-class">
+  <view class="box">
+    <view class="tabs_title df ">
+      <view wx:for="{{tabs}}" wx:key="id" class="tabs_item df" bindtap="handleItemTap" bind:tap="showSort"
+        data-index="{{index}}" data-flag="{{upFlag}}">
+        <view class="{{index==3?'bold':''}}">
+          <text wx:if="{{index==3}}" class="iconfont icon-Shapecopy bold"></text>
+          <text>{{item.value}}</text>
+        </view>
+        <text wx:if="{{index==0}}" class="iconfont {{showSort?'icon-pullup01':'icon-pulldown01'}}"></text>
+        <view wx:if="{{index==2}}" class="pull-group df col">
+          <text class="iconfont min icon-pullup01" wx:if="{{upFlag}}"></text>
+          <text class="iconfont max icon-pulldown01" wx:if="{{downFlag}}"></text>
+        </view>
+        <view class="{{item.isActive?'flag':''}} "></view>
+      </view>
+      <text class="changeStyle pad iconfont {{changeStyleFlag?'icon-pailie':'icon-tubiao-'}}"
+        bind:tap="onChangeStyle"></text>
+    </view>
+  </view>
+  <view class="tabs_content">
+    <!-- <view class="sort-container" wx:if="{{showSort}}"> -->
+    <l-popup show="{{showSort}}" content-align="top" locked="{{false}}" l-class="sort-container" l-bg-class="bg-class">
+      <view class="box pad">
+        <view class="sort-list pad" wx:for="{{tabs[0].children}}" wx:key="index">
+          <view class="sort-item" bind:tap="checkedOnTap" data-con="{{item}}">{{item}}</view>
+        </view>
+      </view>
+    </l-popup>
+    <!-- <l-mask show="{{true}}" z-index="-2" opacity="0.8" l-class="mask"></l-mask> -->
+    <!-- </view> -->
+    <slot></slot>
+  </view>
+</view>

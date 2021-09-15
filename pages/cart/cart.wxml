@@ -1,0 +1,176 @@
+<scroll-view scroll-y="{{isScroll}}">
+  <view class="address-box" wx:if="{{istrue}}" bindtap="hideModal"></view>
+  <view class="car-box" wx:if="{{isshow}}">
+    <image
+      src="https://img11.360buyimg.com/jdphoto/s180x180_jfs/t18163/292/540553659/74408/adeb7463/5a93c51cN3bb5e37b.png">
+    </image>
+    <view class="car-null">购物车空空如也，去逛逛吧~</view>
+  </view>
+  <view class="all" wx:else="{{!isshow}}">
+    <view class="car-head" wx:if="{{iscompile}}">
+      <view class="container-address" bindtap="GetAddress">
+        <image src="../../img/icon/ding.png"></image>
+        <text>{{isaddress}}</text>
+      </view>
+      <view class="compile">
+        <view class="compile-fen">
+          |
+        </view>
+        <view class="compile-bian" bindtap="Compile">
+          编辑
+        </view>
+        <view class="compile-menu">
+          <image src="../../img/icon/sl.png"></image>
+        </view>
+      </view>
+    </view>
+    <view class="car-head" wx:else="{{iscompile}}">
+      <view class="container-address1" bindtap="GetAddress">
+      </view>
+      <view class="compile">
+        <view class="compile-fen">
+          |
+        </view>
+        <view class="compile-bian" bindtap="Complete">
+          完成
+        </view>
+        <view class="compile-menu1">
+        </view>
+      </view>
+    </view>
+    <view class="car-list" wx:for="{{cart}}" wx:key="good_id">
+
+      <view class="car-list-head">
+        <view class="list-head-left">
+          <view class="list-check">
+            <checkbox color="red" bindtap="handeItemChange" checked="{{item.checked}}"
+              data-id="{{item.shopping_car_id}}"></checkbox>
+          </view>
+          <view class="shop-name">
+            JD 京东自营
+          </view>
+        </view>
+        <view class="list-head-right">
+          <view class="help">
+            <image src="../../img/icon/ti.png"></image>
+          </view>
+          <view class="freight">
+            已免运费
+          </view>
+        </view>
+      </view>
+      <view class="car-list-content">
+        <view class="list-content-left">
+          <checkbox color="red" bindtap="handeItemChange" checked="{{item.checked}}" data-id="{{item.shopping_car_id}}">
+          </checkbox>
+        </view>
+        <navigator url="/pages/goods_detail/goods_detail?good_id={{item.good_id}}">
+          <view class="list-content-img">
+            <image src="{{item.img}}"></image>
+          </view>
+        </navigator>
+        <view class="content-detail">
+          <navigator url="/pages/goods_detail/goods_detail?good_id={{item.good_id}}">
+            <view class="content-text">
+              {{item.good_name}}
+            </view>
+          </navigator>
+          <view class="content-select" bindtap="handleSku" data-goodid="{{item.good_id}}">
+            {{item.sku[0].specs}}
+          </view>
+          <view class="content-button">
+            <view class="content-price">
+              <sub>￥</sub>{{item.price}}<sub></sub>
+            </view>
+            <view class="content-num">
+              <text class="{{minusStatus}}" bindtap="reducenum" data-index="{{index}}">-</text>
+              <input type="number" value="{{item.num}}" bindchange="bindManual" data-index="{{index}}" />
+              <text class="normal" bindtap="addnum" data-index="{{index}}">+</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 参数 -->
+  <view class="show" wx:if="{{showModalStatus}}" bindtap="hideModal" data-operation="{{1}}"></view>
+  <view class="tools_show" wx:if="{{showModalStatus}}" animation="{{animationData}}">
+    <view class="show_wrap">
+      <view class="row_item">
+        <view class="img">
+          <image src="{{goodsObj.img[0]}}" bindtap="preview" data-src="{{goodsObj.img[0]}}"></image>
+        </view>
+        <view class="row_name">
+          <view class="price">
+            <view class="show_price">￥</view>
+            <view class="price">{{goodsObj.price}}</view>
+            <!-- <view class="show_price">.00</view> -->
+          </view>
+          <view class="options">
+            <view class="option_item df">已选
+              <text wx:for="{{checkde}}" wx:key="index" class="option_list">{{item.val}},</text>
+            </view>
+          </view>
+          <view class="cancel iconfont icon-cha" bindtap="cancel" data-operation="{{1}}"></view>
+        </view>
+      </view>
+      <view style="height:100vh;overflow: auto">
+        <view class="row_item category_wrap">
+          <view class="category" wx:for="{{goodsObj.info[0].edition.specList}}" wx:key="index">
+            <text class="category">{{item.titel}}</text>
+            <view class="category_title">
+              <view wx:for="{{item.list}}" wx:for-item="i" wx:for-index="j" wx:key="j"
+                class="category_item {{i.check?'check':''}}" bindtap="handleChecked" data-index="{{j}}"
+                data-titel="{{item.titel}}">
+                {{i.val}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="btn">
+        <button class="Sure" bindtap="handleCardAdd">确定</button>
+      </view>
+    </view>
+  </view>
+  <view class="footer_tool {{addlength===0?'dis':''}}" wx:if="{{isfoot}}">
+    <view class="all_chk_wrap" data-id="item.shopping_car_id">
+      <checkbox-group>
+        <checkbox bindtap="handleItemAllCheck" color="red" checked="{{allchecked}}"></checkbox>
+        <text>全选</text>
+      </checkbox-group>
+    </view>
+    <view class="total_price">
+      总计： <view class="total_price_text">￥{{totalPrice}}</view>
+    </view>
+    <view class="order_pay_wrap" bindtap="handlePay">结算({{totalNum}})</view>
+  </view>
+  <view class="footer_tool1 {{addlength===0?'dis':''}}" wx:else="{{isfoot}}">
+    <view class="all_chk_wrap" data-id="item.shopping_car_id">
+      <checkbox-group>
+        <checkbox bindtap="handleItemAllCheck" color="red" checked="{{allchecked}}"></checkbox>
+        <text>全选</text>
+      </checkbox-group>
+    </view>
+    <view class="total_price">
+      移入收藏
+    </view>
+    <view class="order_pay_wrap" bindtap="delete">删除</view>
+  </view>
+  <view class="get-address tools_show" wx:if="{{istrue}}">
+    <view class="address-head">
+      <text>配送至</text>
+      <image src="../../img/icon/cancel.png" bindtap="hideModal"></image>
+    </view>
+      <view class="ads_ht">
+        <view class="adress_item" wx:for="{{GetAddressList}}" bindtap="handleAddress" data-item="{{item}}"
+          wx:key="address_id">
+          <text class="iconfont {{detailed===item.address_id?'icon-gou2':'icon-yuan'}}"
+            data-id="{{item.address_id}}"></text>
+          <text>{{item.detailed}}</text>
+        </view>
+      </view>
+    <view class="other">
+      选择其他地址
+    </view>
+  </view>
+</scroll-view>

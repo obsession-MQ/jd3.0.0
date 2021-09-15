@@ -1,0 +1,81 @@
+/* components/select/select.wxss */
+@import "/styles/iconfont.wxss";
+.select {
+  background: white;
+  bottom: 0;
+  box-sizing: border-box;
+  position: relative;
+}
+.shade {
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.3);
+}
+.title {
+  font-size: 36rpx;
+  color: #333;
+  font-weight: bold;
+  position: relative;
+  width: 100%;
+}
+.title image {
+  width: 24rpx;
+  height: 24rpx;
+  position: absolute;
+  right: 0rpx;
+  top: 7rpx;
+}
+.choice {
+  padding: 30rpx 0;
+  font-size: 25rpx;
+}
+.icon-xiangzuo{
+  color: #666666;
+  font-size: 20rpx;
+}
+.active_list{
+  margin-right: 30rpx;
+}
+.choice_item{
+  display: flex;
+}
+.choice_title{
+  display: flex;
+  border-bottom: 1rpx solid #ececec;
+  padding-left: 30rpx;
+}
+.mr{
+  margin: 0 -28rpx;
+}
+.choice view.active {
+  color: #F44C36;
+  border-bottom: 2rpx solid #F44C36;
+  padding-bottom: 25rpx;
+}
+.select_name{
+  margin-right: 20rpx;
+}
+.choice view.active1 {
+  font-size: 50rpx;
+}
+.choice_item{
+  margin-top: 30rpx;
+}
+.list {
+  font-size: 26rpx;
+  line-height: 66rpx;
+  height: 56vh;
+}
+.list-item {
+  color: red;
+}
+.listActive {
+  color: #F21D0C;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 92vw;
+}
+.icon-gou1{
+  font-size: 60rpx;
+}

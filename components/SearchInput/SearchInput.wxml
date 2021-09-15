@@ -1,0 +1,23 @@
+<view class="search_wrap" bindtap="handledownp">
+  <view class="menu" wx:if="{{Ishow}}">
+    <view class="downbtn">
+      <navigator bindtap="handleBack">
+        <icon class="iconfont icon-xiangzuo"></icon>
+      </navigator>
+      <view class="line"></view>
+      <icon class="iconfont icon-ziyuan" catchtap="eduBulletFrame"></icon>
+    </view>
+    <view class="downp" wx:if="{{Isflag}}" catchtap="eduBulletFrame">
+      <navigator url="{{item.path}}" wx:for="{{downp}}">
+        <text class="iconfont {{item.icon}}"></text>
+        <text class="title">{{item.value}}</text>
+      </navigator>
+    </view>
+  </view>
+  <view class="my-class searbar">
+    <navigator url="/pages/search/search">
+      <l-icon name="research" size="25" color="#3d3d3d" />
+      <text>{{title}}</text>
+    </navigator>
+  </view>
+</view>

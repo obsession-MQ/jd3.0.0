@@ -1,0 +1,341 @@
+.pyg_index {
+  background-color: #f4f4f4;
+}
+.pyg_index .Search {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 300;
+  width: 100%;
+  background-color: #c82519;
+  padding: 0rpx 0rpx 10rpx 0;
+}
+.pyg_index .zzd {
+  position: fixed;
+  width: 100%;
+  z-index: 300;
+  top: 79rpx;
+}
+.pyg_index .zzd .Thead {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: relative;
+  background-color: #c82419;
+}
+.pyg_index .zzd .Thead .Tslide {
+  width: 90%;
+  height: 50rpx;
+  white-space: nowrap;
+  display: flex;
+  padding: 20rpx 0rpx 20rpx 20rpx;
+}
+.pyg_index .zzd .Thead .Tslide view {
+  margin-right: 20rpx;
+}
+.pyg_index .zzd .Thead .Tslide view .Threads {
+  color: #fff;
+  font-size: 26rpx;
+}
+.pyg_index .zzd .Thead .Tslide view .active {
+  background: linear-gradient(to right, #ffffff, #f1a9a1, #efa198, #ec9086, #e76c5f, #e35c4d, #e35545);
+  border-left: 2rpx solid #fff;
+}
+.pyg_index .zzd .Thead .Tslide view .underline {
+  width: 80%;
+  height: 7rpx;
+}
+.pyg_index .zzd .Thead .Tslide view .dddd {
+  background: linear-gradient(to right, #ffffff, #f1a9a1, #efa198, #ec9086, #e76c5f, #e35c4d, #e35545);
+}
+.pyg_index .zzd .Thead .subscript {
+  width: 10%;
+  z-index: 8888;
+  height: 50rpx;
+  margin-top: 20rpx;
+}
+.pyg_index .zzd .Thead .subscript .subscriptv {
+  width: 100%;
+  height: 50rpx;
+}
+.pyg_index .zzd .Thead .subscript .subscriptv .jtx {
+  width: 25rpx;
+  height: 25rpx;
+}
+.pyg_index .zzd .Thead .subscript .subscriptv .jts {
+  width: 25rpx;
+  height: 25rpx;
+}
+.pyg_index .zzd .Thead .subscript-Tslide {
+  position: absolute;
+  z-index: 33;
+  left: 0;
+  top: 90rpx;
+  width: 750rpx;
+  background-color: #B5B5B5;
+}
+.pyg_index .zzd .Thead .subscript-Tslide .shade {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  background-color: #999;
+  z-index: 9999;
+  left: 0;
+  opacity: 0.7;
+}
+.pyg_index .zzd .Thead .subscript-Tslide .quad {
+  padding: 0 10rpx;
+  background-color: #ffffff;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.pyg_index .zzd .Thead .subscript-Tslide .quad .subscript-Tslide-shout {
+  width: 125rpx;
+  margin: 20rpx 10rpx;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 14rpx 0;
+}
+.pyg_index .zzd .Thead .subscript-Tslide .quad .subscript-Tslide-shout .subscript-Tslide-Threads {
+  font-size: 24rpx;
+}
+.pyg_index .zzd .Thead .subscript-Tslide .quad .shou {
+  background-color: #f2f2f2;
+  border: 1px solid #fff;
+}
+.pyg_index .zzd .Thead .subscript-Tslide .quad .shouttt {
+  background-color: #fff !important;
+  border: 1px solid #e03c2b !important;
+}
+.pyg_index .index_swiper {
+  padding: 0 35rpx;
+  margin-top: 167rpx;
+  position: relative;
+}
+.pyg_index .index_swiper .slider_bg {
+  background-image: linear-gradient(0deg, #f1503b, #c82519 50%);
+  width: 100%;
+  height: 200rpx;
+  left: 0;
+  position: absolute;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.pyg_index .index_swiper swiper {
+  height: 270rpx;
+}
+.pyg_index .index_swiper swiper image {
+  width: 100%;
+  border-radius: 15px;
+}
+.pyg_index .page-section swiper {
+  height: 350rpx;
+}
+.pyg_index .page-section swiper swiper-item .swiper-ite {
+  padding: 20rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+.pyg_index .page-section swiper swiper-item .swiper-ite .swiper-ite1 {
+  width: 20%;
+}
+.pyg_index .page-section swiper swiper-item .swiper-ite .swiper-ite1 image {
+  padding: 0 25rpx;
+}
+.pyg_index .page-section swiper swiper-item .swiper-ite .swiper-ite1 .swiper-text {
+  text-align: center;
+}
+.pyg_index .sec_kill_floor {
+  margin: 20rpx 20rpx 0 20rpx;
+  background-color: #fff;
+  border-radius: 20rpx;
+  padding: 20rpx;
+}
+.pyg_index .sec_kill_floor .title_wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10rpx;
+}
+.pyg_index .sec_kill_floor .title_wrap .seckill-left-link {
+  display: flex;
+  align-items: center;
+}
+.pyg_index .sec_kill_floor .title_wrap .seckill-left-link .seckill-left-link1 {
+  font-size: 28rpx;
+  font-weight: 550;
+}
+.pyg_index .sec_kill_floor .title_wrap .seckill-left-link .seckill-left-link2 {
+  background-color: #f52100;
+  font-size: 15rpx;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  margin-left: 20rpx;
+  color: #ffece1;
+  padding: 6rpx 10rpx;
+}
+.pyg_index .sec_kill_floor .title_wrap .seckill-left-link .seckill-left-link3 {
+  padding: 5rpx 10rpx;
+  border: 2rpx solid #f52100;
+  font-size: 15rpx;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  color: #f52100;
+  font-weight: 600;
+}
+.pyg_index .sec_kill_floor .title_wrap .seckill-more-link {
+  display: flex;
+  align-items: center;
+}
+.pyg_index .sec_kill_floor .title_wrap .seckill-more-link .seckill-more-link1 {
+  font-size: 20rpx;
+  color: #8b8b8b;
+}
+.pyg_index .sec_kill_floor .title_wrap .seckill-more-link .seckill-more-link2 {
+  width: 20rpx;
+}
+.pyg_index .sec_kill_floor .title_wrap .seckill-more-link .seckill-more-link2 image {
+  width: 100%;
+}
+.pyg_index .sec_kill_floor .floor-container scroll-view view {
+  display: flex;
+  background-color: #fff;
+  border-radius: 20rpx;
+}
+.pyg_index .sec_kill_floor .floor-container scroll-view view .gator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 10rpx;
+}
+.pyg_index .sec_kill_floor .floor-container scroll-view view .gator image {
+  width: 150rpx;
+  border-radius: 10px;
+}
+.pyg_index .sec_kill_floor .floor-container scroll-view view .gator .goodList_text1 {
+  color: #d7351f;
+  text-align: center;
+}
+.pyg_index .sec_kill_floor .floor-container scroll-view view .gator .goodList_text2 {
+  color: #707070;
+  font-size: 20rpx;
+  text-decoration: line-through;
+}
+.pyg_index .brand {
+  margin: 20rpx;
+  display: flex;
+  background-color: #fff;
+  border-radius: 20rpx;
+}
+.pyg_index .brand .brand1 {
+  width: 25%;
+  padding: 15rpx;
+  text-align: center;
+}
+.pyg_index .brand .brand1 .brand-title {
+  font-size: 30rpx;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  overflow: hidden;
+}
+.pyg_index .brand .brand1 .brand-vice {
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  overflow: hidden;
+  font-size: 20rpx;
+}
+.pyg_index .brand .brand1 .vice0 {
+  color: #7063aa;
+}
+.pyg_index .brand .brand1 .vice1 {
+  color: #c3264c;
+}
+.pyg_index .brand .brand1 .vice2 {
+  color: #ce7851;
+}
+.pyg_index .brand .brand1 .vice3 {
+  color: #6581cc;
+}
+.pyg_index .brand .brand1 .brand-pic {
+  margin-top: 20rpx;
+}
+.pyg_index .brand .brand1 .brand-pic image {
+  border-radius: 20rpx;
+}
+.pyg_index .index_floor .floor_group .floor_title {
+  padding: 10rpx 0;
+}
+.pyg_index .index_floor .floor_group .floor_title image {
+  width: 100%;
+}
+.pyg_index .index_floor .floor_group .floor_list {
+  overflow: hidden;
+}
+.pyg_index .index_floor .floor_group .floor_list navigator {
+  float: left;
+  width: 33.33%;
+}
+.pyg_index .index_floor .floor_group .floor_list navigator:nth-last-child(-n + 4) {
+  height: calc(33.33vw * 386 / 232 / 2);
+  border-left: 10rpx solid #fff;
+}
+.pyg_index .index_floor .floor_group .floor_list navigator:nth-child(2),
+.pyg_index .index_floor .floor_group .floor_list navigator:nth-child(3) {
+  border-bottom: 10rpx solid #fff;
+}
+.pyg_index .index_floor .floor_group .floor_list navigator image {
+  width: 100%;
+  height: 100%;
+}
+.pyg_index .find-similar {
+  margin-top: 20rpx;
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 30rpx;
+}
+.pyg_index .find-similar .similar-product {
+  margin-right: 30rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 45%;
+  margin-bottom: 20rpx;
+  background-color: #fff;
+  border-radius: 10px;
+}
+.pyg_index .find-similar .similar-product .similar-posre image {
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.pyg_index .find-similar .similar-product .similar-product-text {
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  overflow: hidden;
+  font-size: 28rpx;
+  padding: 0 15rpx;
+}
+.pyg_index .find-similar .similar-product .similar-product-info {
+  padding-top: 20rpx;
+  padding-left: 15rpx;
+}
+.pyg_index .find-similar .similar-product .similar-product-info .similar-product-price {
+  color: red;
+  font-size: 40rpx;
+  font-weight: 600;
+}
+.pyg_index .find-similar .similar-product .similar-pj {
+  padding: 10rpx 15rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #999;
+}

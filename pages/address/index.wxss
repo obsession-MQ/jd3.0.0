@@ -1,0 +1,85 @@
+/* pages/address/index.wxss */
+.address_page{
+    background-color: #F7F7F7;
+    min-height: 100vh;
+}
+.address_cont{
+    background-color:#fff;
+}
+.scroll{
+    height:90vh;
+}
+.address_items{
+
+}
+.addr_box{
+    margin-left: 30rpx;
+    padding: 20rpx 0;
+    padding-right: 30rpx;
+    border-bottom: 2px solid #F7F7F7;
+}
+.user_info{
+    font-weight: bold;
+}
+.name{
+    margin-right: 10rpx;
+}
+.phone_num{
+
+}
+.address_text{
+    display: flex;
+}
+.address{
+    flex: 9;
+    margin-top: 5rpx;
+    font-size: 26rpx;
+    color: rgb(126, 126, 126);
+    line-height: 40rpx;
+    margin-top:10rpx;
+}
+
+.default_text{
+    color:red;
+    border: 1px solid red;
+    padding:0rpx 7rpx;
+    font-size:20rpx;
+    text-align:center;
+}
+
+.edit{
+    flex: 1;
+    text-align: right;
+    color: red;
+    font-size: 26rpx;
+}
+.add_button{
+    position: fixed;
+    display: flex;
+    bottom: 0;
+    width: 100%;
+    padding: 30rpx 0;
+    background-color: #fff;
+    justify-content: space-around;
+}
+.wx_import{
+    width: 240rpx;
+    height: 80rpx;
+    font-weight: normal;
+    font-size: 30rpx;
+    border: 1px solid #CCC;
+    border-radius: 40rpx;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.add_newAdress{
+    background-color: red;
+    color: #fff;
+    border: none;
+}
+.wx_icon{
+    color: #0ED069;
+    margin-right: 10rpx;
+}
